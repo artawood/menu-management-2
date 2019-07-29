@@ -1,0 +1,56 @@
+.item-detail-page {
+  margin-top: 175px;
+}
+
+.back-to-dashboard-link {
+  text-decoration: none;
+}
+.back-to-dashboard-link:hover {
+  text-decoration: none;
+}
+
+.back-to-dashboard {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+.back-to-dashboard:hover {
+  color: #04a89b;
+  text-decoration: none;
+}
+
+.item-detail-image {
+  width: 90%;
+}
+
+.item-name {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.item-detail-header {
+  font-size: 1.75rem;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.item-description {
+  font-size: 1.25rem;
+}
+
+.edit-btn {
+  height: 45px;
+  width: 129px;
+  color: #04a89b;
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 30px;
+  border: 2px solid #979797;
+}
+
+.option-text {
+  font-weight: 700;
+}

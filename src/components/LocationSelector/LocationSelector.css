@@ -1,0 +1,22 @@
+.ui.selection.dropdown {
+  border-radius: 0px;
+}
+.ui.selection.dropdown .menu {
+  border-radius: 0px;
+}
+
+/* .ui.selection.dropdown .menu::selection,
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown .menu:hover,
+.ui.selection.active.dropdown .menu::selection,
+.ui.selection.active.dropdown .menu:active,
+.ui.selection.active.dropdown .menu:focus {
+  border-color: #04a89b;
+} */
+
+.ui.dropdown .menu .active.item {
+  font-weight: 700;
+  color: #04a89b;
+}
