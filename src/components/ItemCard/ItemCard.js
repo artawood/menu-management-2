@@ -59,13 +59,16 @@ class ItemCard extends React.Component {
             {...provided.dragHandleProps}
           >
             <Card.Body>
-              <Row className="pl-3 pb-1">
-                <div className="item-name-card pr-2">
+              <Row className="">
+                <Col sm="10" className="item-name-card">
                   {this.props.item.name}
-                </div>
+                </Col>
+                <Col sm="2">
+                  <i class="fas fa-ellipsis-h" />
+                </Col>
               </Row>
               <Row>
-                <Col xs={"12"}>
+                <Col xs="12">
                   <Row className="pl-3 pt-1 pb-1">
                     <div className="item-price-card pr-2">
                       $ {this.props.item.price}
@@ -84,7 +87,7 @@ class ItemCard extends React.Component {
                     />
                   </div>
                 </Col>
-                <Col xs="5">
+                <Col xs="5" className="text-right">
                   <Link
                     className="see-details"
                     to={"/itemdetails/" + this.props.item.id}
