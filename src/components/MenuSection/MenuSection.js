@@ -1,5 +1,6 @@
 import React from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
+import { Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 import ItemCard from "../ItemCard";
 
@@ -15,7 +16,7 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h3`
-  padding: 8px;
+  padding: 5px;
   background-color: ${props =>
     props.isDraggingOver ? "lightgrey" : "#f6f6f6"};
 `;
@@ -40,7 +41,14 @@ class MenuSection extends React.Component {
             ref={provided.innerRef}
           >
             <Title {...provided.dragHandleProps}>
-              {this.props.section.title}
+              <Row className="pt-2">
+                <Col sm="9">
+                  <h3>{this.props.section.title}</h3>
+                </Col>
+                <Col sm="3" className="text-right">
+                  <i class="fas fa-ellipsis-h" />
+                </Col>
+              </Row>
             </Title>
             <Droppable droppableId={this.props.section.id} type="task">
               {(provided, snapshot) => (
