@@ -5,9 +5,9 @@ import { Navbar } from "react-bootstrap";
 
 const Header = props => (
   <Navbar bg="white" variant="dark" fixed="top" className="shadow navbar-large">
-    <h1 className="pt-3 pr-4 menu-btn" onClick={() => props.toggleSidebar()}>
+    {/* <h1 className="pt-3 pr-4 menu-btn" onClick={() => props.toggleSidebar()}>
       <Hamburger />
-    </h1>
+    </h1> */}
     <Navbar.Brand className="pl-2">
       <Link to="/">
         <img

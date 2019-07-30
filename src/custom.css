@@ -34,6 +34,10 @@ p {
   background-color: #e8e8e8;
 }
 
+.shadow {
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
 .category-text {
   font-weight: 500;
 }

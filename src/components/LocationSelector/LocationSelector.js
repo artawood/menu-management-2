@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "semantic-ui-react";
 import "./LocationSelector.css";
 
-import data from "../../models/data.json";
+import data from "../../models/data.js";
 
 class LocationSelector extends React.Component {
   state = {

@@ -1,10 +1,9 @@
 import React from "react";
-import Moment from "react-moment";
 import { Row, Col, Jumbotron, Nav } from "react-bootstrap";
 import LocationSelector from "../LocationSelector";
 import "./Hero.css";
 
-import data from "../../models/data2.json";
+import data from "../../models/data.json";
 
 const Hero = props => (
   <Jumbotron className="hero-clear pb-3">
@@ -13,10 +12,7 @@ const Hero = props => (
         <h1>Menu Management</h1>
       </Col>
       <Col md="4">
-        <p>
-          Last pushed{" "}
-          <Moment format="MMMM Do YYYY, h:mm:ss a">{props.datePushed}</Moment>
-        </p>
+        <p>Last pushed </p>
       </Col>
     </Row>
     <LocationSelector class="py-5" />
@@ -24,35 +20,7 @@ const Hero = props => (
     <Nav
       activeKey="all"
       onSelect={selectedKey => alert(`filter ${selectedKey}`)}
-    >
-      <Nav.Item>
-        <Nav.Link
-          className={
-            props.showAll
-              ? "isActive filter-item category-text first-nav"
-              : "filter-item category-text first-nav"
-          }
-          onClick={props.renderAll}
-        >
-          All
-        </Nav.Link>
-      </Nav.Item>
-      {/* dynamic rendering of menu titles */}
-      {props.data.map(menu => (
-        <Nav.Item>
-          <Nav.Link
-            className={
-              props.showAll === false && props.showBurgers === true
-                ? "isActive filter-item category-text"
-                : "filter-item category-text"
-            }
-            onClick={() => props.renderSelected(menu.title, menu.menu_items)}
-          >
-            {menu.title}
-          </Nav.Link>
-        </Nav.Item>
-      ))}
-    </Nav>
+    />
   </Jumbotron>
 );
 
