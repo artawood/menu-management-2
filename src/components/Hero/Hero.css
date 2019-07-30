@@ -1,0 +1,30 @@
+.hero-clear {
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+
+.jumbotron {
+  padding: 4rem 1.5rem 0rem;
+}
+
+.first-filter {
+  padding-left: 0px;
+}
+
+.filter-item {
+  font-size: 24px;
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+.filter-item:hover {
+  color: #04a89b;
+}
+
+.first-nav {
+  padding: 0.5rem 1rem 0.5rem 0rem;
+}
+
+.dropdown-divider {
+  margin: 2rem 0 0.5rem;
+}

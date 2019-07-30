@@ -1,0 +1,55 @@
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 400;
+  color: #6f6d6d;
+  font-size: 22px;
+  padding: 0.65rem 0.5rem;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link .active {
+  color: #6f6d6d;
+}
+
+.isActive {
+  color: #04a89b;
+  fill: #04a89b;
+}
+
+.currentPage {
+  color: #6f6d6d;
+  background-color: #e3e3e3;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Add padding left and right */
+.option {
+  padding: 30px 0px 10px;
+}
+
+.other-option {
+  padding: 20px 45px;
+}
+
+.hover:hover {
+  background-color: #e3e3e3;
+}
