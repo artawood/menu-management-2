@@ -43,12 +43,7 @@ class CancelSaveModal extends React.Component {
     }
     return (
       <div>
-        <Button
-          variant="outline-secondary"
-          size="lg"
-          className="mr-3"
-          onClick={this.handleShow}
-        >
+        <Button variant="outline-secondary" size="lg" className="mr-3" onClick={this.handleShow}>
           Cancel
         </Button>
 

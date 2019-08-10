@@ -2,8 +2,8 @@ import React from "react";
 
 export const Push = props => (
   <svg
-    width="32px"
-    height="32px"
+    width={props.width}
+    height={props.height}
     className={props.className}
     fill="#9B9898"
     viewBox="0 0 32 32"

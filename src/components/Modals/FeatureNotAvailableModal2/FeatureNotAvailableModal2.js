@@ -31,7 +31,7 @@ class FeatureNotAvailable2 extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-5" href="#">
             <span data-feather="file-text">
-              <LogOut />{" "}
+              <LogOut width="32" height="32" />{" "}
             </span>
             Log Out
           </a>

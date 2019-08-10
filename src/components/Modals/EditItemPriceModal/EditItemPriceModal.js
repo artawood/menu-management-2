@@ -78,14 +78,13 @@ class EditItemPriceModal extends React.Component {
     return (
       <div className="float-left">
         <span onClick={this.handleShow} className="edit-icon">
-          <Edit />
+          <Edit width="32" height="32" />
         </span>
 
         <Modal show={this.state.show} onHide={this.handleClose} centered>
           <Modal.Header className="bg-gray">
             <h2 className="pt-3">
-              Edit Item Price:{" "}
-              <span style={style.itemName}>{this.state.name}</span>
+              Edit Item Price: <span style={style.itemName}>{this.state.name}</span>
             </h2>
             <CloseButton handleClose={this.handleClose} />
           </Modal.Header>

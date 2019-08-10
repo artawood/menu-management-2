@@ -25,10 +25,7 @@ class Dashboard extends React.Component {
       return;
     }
 
-    if (
-      destination.droppableId === source.draggableId &&
-      destination.index === source.index
-    ) {
+    if (destination.droppableId === source.draggableId && destination.index === source.index) {
       return;
     }
 
@@ -105,14 +102,10 @@ class Dashboard extends React.Component {
         <Header toggleSidebar={this.onSetSidebarDocked} />
         <Sidebar sidebar={<SidebarContent />} docked={true}>
           <Container fluid className="pt-5 pl-6">
-            <Hero className="pb-5" />
+            <Hero className="pb-5" title="Menu Management" />
             <Container fluid>
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>
-                <Droppable
-                  droppableId="all-columns"
-                  direction="vertical"
-                  type="column"
-                >
+                <Droppable droppableId="all-columns" direction="vertical" type="column">
                   {provided => (
                     <Section
                       {...provided.droppableProps}
@@ -122,9 +115,7 @@ class Dashboard extends React.Component {
                     >
                       {this.state.menuSectionOrder.map((sectionId, index) => {
                         const section = this.state.menu_sections[sectionId];
-                        const items = section.menu_items.map(
-                          itemId => this.state.menu_items[itemId]
-                        );
+                        const items = section.menu_items.map(itemId => this.state.menu_items[itemId]);
 
                         return (
                           <MenuSection

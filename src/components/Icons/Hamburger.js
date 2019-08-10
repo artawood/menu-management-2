@@ -2,8 +2,8 @@ import React from "react";
 
 export const Hamburger = props => (
   <svg
-    width="45px"
-    height="40px"
+    width={props.width}
+    height={props.height}
     className={props.className}
     fill="#9B9898"
     viewBox="50 45 30 40"

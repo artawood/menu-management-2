@@ -37,7 +37,7 @@ class FetchDataModal extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-5" href="#">
             <span data-feather="fetch-data">
-              <Fetch />{" "}
+              <Fetch width="32" height="32" />{" "}
             </span>
             Fetch Data
           </a>
@@ -46,10 +46,7 @@ class FetchDataModal extends React.Component {
         <Modal show={this.state.show} onHide={this.handleClose} centered>
           <Modal.Title style={style}>Fetching latest data</Modal.Title>
           <Modal.Body className="text-center py-2">
-            <img
-              src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
-              alt="fetching"
-            />
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="fetching" />
           </Modal.Body>
         </Modal>
       </div>

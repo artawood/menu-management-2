@@ -2,8 +2,8 @@ import React from "react";
 
 export const Home = props => (
   <svg
-    width="32px"
-    height="32px"
+    width={props.width}
+    height={props.height}
     className={props.className}
     viewBox="0 0 32 32"
     version="1.1"
