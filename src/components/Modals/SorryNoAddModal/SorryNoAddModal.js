@@ -30,7 +30,7 @@ class SorryNoAddModal extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-5" href="#">
             <span data-feather="add-item">
-              <Add />{" "}
+              <Add width="32" height="32" />{" "}
             </span>
             Add Items
           </a>
@@ -39,9 +39,7 @@ class SorryNoAddModal extends React.Component {
           <Modal.Header className="mx-auto">
             <Modal.Title>Sorry!</Modal.Title>
           </Modal.Header>
-          <Modal.Body className="text-center">
-            This is just a prototype. Data cannot be added at this time.
-          </Modal.Body>
+          <Modal.Body className="text-center">This is just a prototype. Data cannot be added at this time.</Modal.Body>
           <Modal.Footer className="mx-auto">
             <Button variant="secondary" onClick={this.handleClose}>
               Got it!

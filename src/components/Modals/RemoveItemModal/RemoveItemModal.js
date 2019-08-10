@@ -51,12 +51,8 @@ class RemoveItemModal extends React.Component {
   render() {
     return (
       <div>
-        <div
-          style={style.trash}
-          className="trash-active"
-          onClick={this.handleShow}
-        >
-          <Trash />
+        <div style={style.trash} className="trash-active" onClick={this.handleShow}>
+          <Trash width="32" height="32" />
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose} centered>

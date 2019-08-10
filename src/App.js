@@ -14,6 +14,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Dashboard from "./pages/Dashboard";
+import Homepage from "./pages/Homepage";
+import LocationManagement from "./pages/LocationManagement";
 
 // Uncomment if adding redux
 // const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -25,7 +27,9 @@ class App extends React.Component {
         <ScrollToTop>
           <Header />
           <Switch>
-            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/" component={Homepage} />
+            <Route exact path="/menu-management" component={Dashboard} />
+            <Route exact path="/location-management" component={LocationManagement} />
             {/* <Route exact path="/itemdetails/" component={ItemDetails} />
             <Route exact path="/itemdetails/:id" component={ItemDetails} />
             <Route

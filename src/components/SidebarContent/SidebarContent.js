@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./SidebarContent.css";
 
@@ -51,9 +52,7 @@ const styles = {
 const newTimeStamp = new Date().getTime();
 
 const SidebarContent = props => {
-  const style = props.style
-    ? { ...styles.sidebar, ...props.style }
-    : styles.sidebar;
+  const style = props.style ? { ...styles.sidebar, ...props.style } : styles.sidebar;
 
   return (
     <div style={style}>
@@ -61,18 +60,15 @@ const SidebarContent = props => {
         <div className="sidebar-sticky">
           <ul className="nav flex-column option">
             <li className="nav-item hover currentPage">
-              <a className="nav-link active ml-5">
+              <Link to="/" className="nav-link active ml-5">
                 <span data-feather="home">
-                  <Home className="isActive" />{" "}
+                  <Home className="isActive" width="32" height="32" />{" "}
                 </span>
                 <span className="curren-page">Home</span>
-              </a>
+              </Link>
             </li>
             <FetchData />
-            <PushChanges
-              onClick={() => this.props.pushTimeStamp(newTimeStamp)}
-            />
-            <SorryNoAddModal />
+            <PushChanges onClick={() => this.props.pushTimeStamp(newTimeStamp)} />
           </ul>
           <div class="dropdown-divider" />
           <ul className="nav flex-column mb-2">

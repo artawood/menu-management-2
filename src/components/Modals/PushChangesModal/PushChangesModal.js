@@ -69,7 +69,7 @@ class SampleModal extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-5" href="#">
             <span data-feather="push-changes">
-              <Push />{" "}
+              <Push width="32" height="32" />{" "}
             </span>
             Push Changes
           </a>
@@ -98,18 +98,10 @@ class SampleModal extends React.Component {
             </ul>
           </Modal.Body>
           <Modal.Footer className="mx-auto">
-            <Button
-              variant="outline-secondary"
-              className="cm-btn-secondary"
-              onClick={this.handlePushingChanges}
-            >
+            <Button variant="outline-secondary" className="cm-btn-secondary" onClick={this.handlePushingChanges}>
               Yes
             </Button>
-            <Button
-              variant="outline-secondary"
-              className="cm-btn-secondary"
-              onClick={this.handleClose}
-            >
+            <Button variant="outline-secondary" className="cm-btn-secondary" onClick={this.handleClose}>
               No
             </Button>
           </Modal.Footer>
@@ -118,35 +110,20 @@ class SampleModal extends React.Component {
         <Modal show={this.state.pushed} onHide={this.handleClose} centered>
           <Modal.Body className="text-center">
             <Modal.Title>Pushing Changes</Modal.Title>
-            <img
-              src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
-              alt="pushing"
-            />
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="pushing" />
           </Modal.Body>
         </Modal>
 
-        <Modal
-          show={this.state.pushComplete}
-          onHide={this.handleClose}
-          centered
-        >
+        <Modal show={this.state.pushComplete} onHide={this.handleClose} centered>
           <Modal.Body className="text-center">
             <Modal.Title className="font-weight-bold">Error!</Modal.Title>
             <h2>Changes failed to push</h2>
             <p>
-              Please contact{" "}
-              <a href="mailto:support@itsacheckmate.com">
-                support@itsacheckmate.com
-              </a>{" "}
-              for help.
+              Please contact <a href="mailto:support@itsacheckmate.com">support@itsacheckmate.com</a> for help.
             </p>
           </Modal.Body>
           <Modal.Footer className="mx-auto">
-            <Button
-              variant="primary"
-              className="cm-btn-primary"
-              onClick={this.handleClose}
-            >
+            <Button variant="primary" className="cm-btn-primary" onClick={this.handleClose}>
               Retry
             </Button>
             <Button variant="outline-secondary" onClick={this.handleClose}>
