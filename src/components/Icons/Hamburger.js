@@ -6,7 +6,7 @@ export const Hamburger = props => (
     height={props.height}
     className={props.className}
     fill="#9B9898"
-    viewBox="50 45 30 40"
+    viewBox="50 50 30 40"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >

@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  ButtonToolbar,
-  Table,
-  InputGroup,
-  FormControl
-} from "react-bootstrap";
+import { Container, Row, Col, ButtonToolbar, Table, InputGroup, FormControl } from "react-bootstrap";
 //Component
 import EditModifierList from "../../components/EditModifierList";
 import CancelSaveModal from "../../components/Modals/CancelSaveModal";
@@ -18,19 +10,19 @@ import SorryNoAddOptionModal from "../../components/Modals/SorryNoAddOptionModal
 import "./EditItemDetails.css";
 
 //dummy data
-import data from "../../models/data.json";
+import data from "../../models/data.js";
 
 class EditItemDetails extends Component {
   state = {
-    item: data.menu.item[0],
-    itemName: data.menu.item[0].name,
+    item: data.menu_items["item-1"],
+    itemName: data.menu_items["item-1"].name,
     modifiers: [],
     EditItemName: "",
     EditItemPrice: "",
     EditItemCategory: "",
     EditItemDescription: "",
     id: "",
-    sectionList: data.menu.section
+    sectionList: ""
   };
 
   componentDidMount() {
@@ -40,14 +32,14 @@ class EditItemDetails extends Component {
   loadData = () => {
     let id = this.props.match.params.id;
     this.setState({
-      item: data.menu.item[id],
-      itemName: data.menu.item[id].name,
-      modifiers: data.menu.item[id].modifier,
-      EditItemName: data.menu.item[id].name,
-      EditItemPrice: data.menu.item[id].price,
-      EditItemCategory: data.menu.item[id].section,
-      EditItemDescription: data.menu.item[id].description,
-      id: data.menu.item[id].id
+      item: data.menu_items[id],
+      itemName: data.menu_items[id].name,
+      modifiers: data.menu_items[id].modifier,
+      EditItemName: data.menu_items[id].name,
+      EditItemPrice: data.menu_items[id].price,
+      EditItemCategory: "",
+      EditItemDescription: data.menu_items[id].description,
+      id: data.menu_items[id].id
     });
   };
 
@@ -60,10 +52,8 @@ class EditItemDetails extends Component {
 
   removeModifier = modId => {
     let id = this.props.match.params.id;
-    let modifier = data.menu.item[id].modifier.filter(
-      modifier => modifier.id !== modId
-    );
-    this.setState({ modifiers: modifier });
+    let modifier = data.menu_items.modifier.filter(modifier => modifier.id !== modId);
+    this.setState({ modifier: modifier });
   };
 
   render() {
@@ -86,11 +76,7 @@ class EditItemDetails extends Component {
                 <Col md="3">
                   <img
                     className="item-detail-image"
-                    src={
-                      this.state.item.imgURL
-                        ? this.state.item.imgURL
-                        : "icon-camera.svg"
-                    }
+                    src={this.state.item.imgURL ? this.state.item.imgURL : "icon-camera.svg"}
                     alt={this.state.item.name}
                   />
                 </Col>
@@ -121,7 +107,7 @@ class EditItemDetails extends Component {
                       </div>
                     </Col>
                     <Col xs="6">
-                      <div className="pt-2">
+                      {/* <div className="pt-2">
                         <h2 className="item-detail-header">Category</h2>
                         <InputGroup size="lg">
                           <FormControl
@@ -138,7 +124,7 @@ class EditItemDetails extends Component {
                             ))}
                           </FormControl>
                         </InputGroup>
-                      </div>
+                      </div> */}
                     </Col>
                   </Row>
 

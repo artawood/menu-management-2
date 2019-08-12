@@ -14,11 +14,11 @@ import { Home } from "../Icons";
 
 const styles = {
   sidebar: {
-    width: 300,
+    width: 250,
     height: "100%",
-    padding: "150px 0px 0px 0px",
+    padding: "80px 0px 0px 0px",
     boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px",
-    backgroundColor: "#F6F6F6"
+    backgroundColor: "#141A25"
   },
   sidebarLink: {
     display: "block",
@@ -29,23 +29,23 @@ const styles = {
   divider: {
     margin: "8px 0",
     height: 1,
-    backgroundColor: "#C7C7C7"
+    backgroundColor: "#D8D8D8"
   },
   content: {
     padding: "16px",
     height: "100%",
-    backgroundColor: "#4A4A4A"
+    backgroundColor: "#313842"
   },
   option: {
     padding: "30px 50px 10px"
   },
   navLink: {
     fontWeight: 500,
-    color: "#6F6D6D",
+    color: "#DFDFDF",
     fontSize: 22
   },
   isActive: {
-    color: "#04A89B"
+    color: "#FFFFFF"
   }
 };
 
@@ -59,10 +59,10 @@ const SidebarContent = props => {
       <nav class="d-none d-md-block sidebar">
         <div className="sidebar-sticky">
           <ul className="nav flex-column option">
-            <li className="nav-item hover currentPage">
+            <li className="nav-item hover">
               <Link to="/" className="nav-link active ml-5">
                 <span data-feather="home">
-                  <Home className="isActive" width="32" height="32" />{" "}
+                  <Home className="" width="32" height="32" />
                 </span>
                 <span className="curren-page">Home</span>
               </Link>

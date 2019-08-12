@@ -7,7 +7,7 @@
 
 .sidebar .nav-link {
   font-weight: 400;
-  color: #6f6d6d;
+  color: #dfdfdf;
   font-size: 22px;
   padding: 0.65rem 0.5rem;
 }
@@ -27,8 +27,8 @@
 }
 
 .currentPage {
-  color: #6f6d6d;
-  background-color: #e3e3e3;
+  color: #ffffff;
+  background-color: #313842;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -51,5 +51,5 @@
 }
 
 .hover:hover {
-  background-color: #e3e3e3;
+  background-color: #313842;
 }

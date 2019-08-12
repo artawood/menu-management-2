@@ -5,6 +5,7 @@ export const Home = props => (
     width={props.width}
     height={props.height}
     className={props.className}
+    fill="#9B9898"
     viewBox="0 0 32 32"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

@@ -6,11 +6,11 @@ import ModifierList from "../../components/ModifierList";
 import "./ItemDetails.css";
 
 //dummy data
-import data from "../../models/data.json";
+import data from "../../models/data.js";
 
 class ItemDetails extends Component {
   state = {
-    item: data.menu.item[0]
+    item: data.menu_items["item-1"]
   };
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class ItemDetails extends Component {
 
   loadData = () => {
     let id = this.props.match.params.id;
-    this.setState({ item: data.menu.item[id] });
+    this.setState({ item: data.menu_items[id] });
   };
 
   render() {
@@ -30,7 +30,7 @@ class ItemDetails extends Component {
           {/* Navigation and Timestamp */}
           <Row className="pb-4">
             <Col md="8">
-              <Link className="back-to-dashboard-link" to="/">
+              <Link className="back-to-dashboard-link" to="/menu-management">
                 <h4 className="back-to-dashboard">&lt; Back to Dashboard</h4>
               </Link>
             </Col>
@@ -61,17 +61,13 @@ class ItemDetails extends Component {
                         <Col xs="6">
                           <div className="pt-2">
                             <h2 className="item-detail-header">Price</h2>
-                            <p className="price text-muted">
-                              {this.state.item.price}
-                            </p>
+                            <p className="price text-muted">{this.state.item.price}</p>
                           </div>
                         </Col>
                         <Col xs="6">
                           <div className="pt-2">
                             <h2 className="item-detail-header">Category</h2>
-                            <p className="price text-muted">
-                              {this.state.item.section}
-                            </p>
+                            <p className="price text-muted">{this.state.item.section}</p>
                           </div>
                         </Col>
                       </Row>
@@ -81,9 +77,7 @@ class ItemDetails extends Component {
 
                   <div className="pt-2">
                     <h4 className="item-detail-header">Description</h4>
-                    <p className="item-description">
-                      {this.state.item.description}
-                    </p>
+                    <p className="item-description">{this.state.item.description}</p>
                   </div>
                 </Col>
               </Row>
@@ -92,17 +86,14 @@ class ItemDetails extends Component {
             <Col md="2">
               {/* <SorryNoEditModal /> */}
               <Link to={"/edit/itemdetails/" + this.state.item.id}>
-                <Button
-                  className="edit-btn float-right"
-                  variant="outline-secondary"
-                >
+                <Button className="edit-btn float-right" variant="outline-secondary">
                   Edit
                 </Button>
               </Link>
             </Col>
           </Row>
           <h2 className="option-text pt-5 pb-2">Options</h2>
-          <Table bordered hover>
+          <Table striped hover>
             <thead>
               <tr>
                 <th>Name</th>
@@ -113,19 +104,23 @@ class ItemDetails extends Component {
                 <th>Available</th>
               </tr>
             </thead>
-            {this.state.item.modifier.map(modifier => (
-              <ModifierList
-                id={modifier.id}
-                key={modifier.id}
-                name={modifier.name}
-                calories={modifier.calories}
-                groupName={modifier.groupName}
-                groupMin={modifier.groupMin}
-                groupMax={modifier.groupMax}
-                price={modifier.price}
-                soldOut={modifier.soldOut}
-              />
-            ))}
+            <tbody>
+              {this.state.item.modifier.map(modifier => (
+                <ModifierList
+                  id={modifier.id}
+                  key={modifier.id}
+                  name={modifier.name}
+                  calories={modifier.calories}
+                  groupName={modifier.groupName}
+                  groupMin={modifier.groupMin}
+                  groupMax={modifier.groupMax}
+                  price={modifier.price}
+                  soldOut={modifier.soldOut}
+                  scheduled={modifier.sold_out_scheduled}
+                  scheduledFor={modifier.scheduledFor}
+                />
+              ))}
+            </tbody>
           </Table>
         </Container>
       </div>
