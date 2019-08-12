@@ -5,6 +5,7 @@ export * from "./Fetch";
 export * from "./Hamburger";
 export * from "./Home";
 export * from "./Location";
+export * from "./Logo";
 export * from "./LogOut";
 export * from "./Menu";
 export * from "./MenuManagement";

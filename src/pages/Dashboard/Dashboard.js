@@ -101,7 +101,7 @@ class Dashboard extends React.Component {
       <div className="App">
         <Header toggleSidebar={this.onSetSidebarDocked} />
         <Sidebar sidebar={<SidebarContent />} docked={true}>
-          <Container fluid className="pt-5 pl-6">
+          <Container fluid className="pt-4 pl-6">
             <Hero className="pb-5" title="Menu Management" />
             <Container fluid>
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>

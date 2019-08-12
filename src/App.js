@@ -16,6 +16,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 import LocationManagement from "./pages/LocationManagement";
+import ItemDetails from "./pages/ItemDetails";
+import EditItemDetails from "./pages/EditItemDetails";
 
 // Uncomment if adding redux
 // const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -30,18 +32,10 @@ class App extends React.Component {
             <Route exact path="/" component={Homepage} />
             <Route exact path="/menu-management" component={Dashboard} />
             <Route exact path="/location-management" component={LocationManagement} />
-            {/* <Route exact path="/itemdetails/" component={ItemDetails} />
+            <Route exact path="/itemdetails/" component={ItemDetails} />
             <Route exact path="/itemdetails/:id" component={ItemDetails} />
-            <Route
-              exact
-              path="/edit/itemdetails/"
-              component={EditItemDetails}
-            />
-            <Route
-              exact
-              path="/edit/itemdetails/:id"
-              component={EditItemDetails}
-            /> */}
+            <Route exact path="/edit/itemdetails/" component={EditItemDetails} />
+            <Route exact path="/edit/itemdetails/:id" component={EditItemDetails} />
           </Switch>
         </ScrollToTop>
       </Router>

@@ -33,7 +33,7 @@ class CancelSaveModal extends React.Component {
 
   render() {
     if (this.state.cancel === true) {
-      return <Redirect to={"/"} />;
+      return <Redirect to={"/menu-management"} />;
     }
     return (
       <div>

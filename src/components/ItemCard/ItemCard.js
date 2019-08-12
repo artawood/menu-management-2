@@ -1,13 +1,11 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col, Dropdown, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SoldOutSwitch from "../ToggleSoldOut";
+import CustomDropdown from "../CustomDropdown";
 import styled from "styled-components";
 //Uncomment if using thes features
-// import { Link } from "react-router-dom";
-// import { Card, Row, Col } from "react-bootstrap";
-// import SoldOutSwitch from "../ToggleSoldOut";
 // import EditItemNameModal from "../Modals/EditItemNameModal";
 // import EditItemPriceModal from "../Modals/EditItemPriceModal";
 // import RemoveItemModal from "../Modals/RemoveItemModal";
@@ -33,19 +31,6 @@ class ItemCard extends React.Component {
     });
   };
 
-  handleSoldOut() {
-    {
-      this.state.soldOut
-        ? this.setState({
-            soldOut: false,
-            soldOutClass: ""
-          })
-        : this.setState({
-            soldOut: true,
-            soldOutClass: "soldOut"
-          });
-    }
-  }
   render() {
     return (
       <Draggable draggableId={this.props.item.id} index={this.props.index}>
@@ -64,15 +49,20 @@ class ItemCard extends React.Component {
                   {this.props.item.name}
                 </Col>
                 <Col sm="2">
-                  <i class="fas fa-ellipsis-h" />
+                  <Dropdown alignRight>
+                    <Dropdown.Toggle as={CustomDropdown}>
+                      <i class="fas fa-ellipsis-h" />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item>Delete Item</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Col>
               </Row>
               <Row>
                 <Col xs="12">
                   <Row className="pl-3 pt-1 pb-1">
-                    <div className="item-price-card pr-2">
-                      $ {this.props.item.price}
-                    </div>
+                    <div className="item-price-card pr-2">$ {this.props.item.price}</div>
                   </Row>
                 </Col>
               </Row>
@@ -81,17 +71,11 @@ class ItemCard extends React.Component {
               <Row>
                 <Col xs="7">
                   <div className="d-flex mt-2">
-                    <SoldOutSwitch
-                      enabled={this.props.item.soldOut ? false : true}
-                      className="pr-2"
-                    />
+                    <SoldOutSwitch enabled={this.props.item.soldOut ? false : true} className="pr-2" />
                   </div>
                 </Col>
                 <Col xs="5" className="text-right">
-                  <Link
-                    className="see-details"
-                    to={"/itemdetails/" + this.props.item.id}
-                  >
+                  <Link className="see-details" to={"/itemdetails/" + this.props.item.id}>
                     See Details
                   </Link>
                 </Col>

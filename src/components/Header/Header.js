@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Hamburger } from "../Icons";
+import { Hamburger, Logo } from "../Icons";
 import { Navbar } from "react-bootstrap";
 
 class Header extends React.Component {
@@ -33,11 +33,12 @@ class Header extends React.Component {
         </h1>
         <Navbar.Brand className="pl-2">
           <Link to="/">
-            <img
+            {/* <img
               alt=""
               src="https://www.itsacheckmate.com/wp-content/uploads/2019/05/ItsaCheckmateLogo_Horizontal_Color_4.png"
               className="d-inline-block align-top logo"
-            />
+            /> */}
+            <Logo height="44" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle />

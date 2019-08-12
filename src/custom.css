@@ -155,3 +155,11 @@ select:not([multiple]) {
   padding: 0.5em;
   padding-right: 1.5em;
 }
+
+/* custom accordian style */
+
+.accordion > .card:first-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
