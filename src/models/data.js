@@ -2777,6 +2777,12 @@ const data = {
         { name: "Doordash", offline: false }
       ]
     }
+  ],
+  thirdParties: [
+    { name: "UberEats", offline: false },
+    { name: "Postmates", offline: false },
+    { name: "Doordash", offline: false },
+    { name: "GrubHub", offline: false }
   ]
 };
 

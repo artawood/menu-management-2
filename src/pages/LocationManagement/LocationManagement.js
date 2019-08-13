@@ -1,10 +1,12 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import SidebarContent from "../../components/SidebarContent";
 import Hero from "../../components/Hero";
 import LocationCard from "../../components/LocationCard";
-import { Container, Row, Col } from "react-bootstrap";
+import { Menu } from "semantic-ui-react";
+import { LocationFilter, StatusFilter, ThirdPartyFilter } from "../../components/Filters";
 
 import data from "../../models/data.js";
 
@@ -21,14 +23,14 @@ class LocationManagement extends React.Component {
             <Container fluid />
             <Row>
               <Col xs="2">
-                <h2>Location</h2>
+                <LocationFilter />
               </Col>
-              <Col xs="1">
-                <h2>Status</h2>
+              <Col xs="2">
+                <StatusFilter />
               </Col>
-              <Col xs="6" />
+              <Col xs="5" />
               <Col xs="3">
-                <h2>Third Parties</h2>
+                <ThirdPartyFilter thirdParties={this.state.thirdParties} />
               </Col>
             </Row>
             {this.state.location.map(site => {
