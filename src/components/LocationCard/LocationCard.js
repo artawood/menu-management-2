@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../../components/ToggleOffline";
-import { MenuManagement } from "../Icons";
+import { MenuManagement, ChevronDown } from "../Icons";
 
 const style = {
   color: "red"
@@ -31,7 +31,8 @@ const LocationCard = props => (
           </Col>
           <Col xs="3">
             <Accordion.Toggle as={Nav.Link} variant="link" eventKey="0">
-              ({props.thirdParties.length}) Third Parties <span style={style}>( ) Offline</span>
+              ({props.thirdParties.length}) Third Parties <span style={style}>( ) Offline</span>{" "}
+              <ChevronDown width="15" />
             </Accordion.Toggle>
           </Col>
         </Row>
