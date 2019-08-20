@@ -37,7 +37,9 @@ p {
 .shadow {
   box-shadow: 0 0px 6px rgba(0, 0, 0, 0.15) !important;
 }
-
+.divider {
+  border-top: 1px solid #e9ecef;
+}
 .category-text {
   font-weight: 500;
 }

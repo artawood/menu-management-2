@@ -5,7 +5,9 @@ const data = {
       imgURL: "",
       name: "Hamburger",
       price: "7.99",
-      soldOut: false,
+      soldOut: true,
+      scheduled: true,
+      scheduledFor: "2 days",
       modifier: [
         {
           id: 0,
@@ -2726,6 +2728,8 @@ const data = {
       text: "Five Guys - AL0193",
       value: "AL0193",
       offline: false,
+      scheduled: true,
+      scheduledFor: "2 days",
       thirdParties: [
         { name: "UberEats", offline: true },
         { name: "Postmates", offline: false },
@@ -2738,6 +2742,8 @@ const data = {
       text: "Five Guys - AL0230",
       value: "AL0230",
       offline: false,
+      scheduled: false,
+      scheduledFor: "",
       thirdParties: [
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
@@ -2748,7 +2754,9 @@ const data = {
       key: "AL0048",
       text: "Five Guys - AL0048",
       value: "AL0048",
-      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      scheduledFor: "2 days",
       thirdParties: [
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
@@ -2759,7 +2767,9 @@ const data = {
       key: "AL0068",
       text: "Five Guys - AL0068",
       value: "AL0068",
-      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      scheduledFor: "2 days",
       thirdParties: [
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
@@ -2770,7 +2780,75 @@ const data = {
       key: "AL0434",
       text: "Five Guys - AL0434",
       value: "AL0434",
+      scheduled: false,
+      scheduledFor: "",
+      scheduledFor: "2 days",
+      thirdParties: [
+        { name: "UberEats", offline: false },
+        { name: "Postmates", offline: false },
+        { name: "Doordash", offline: false }
+      ]
+    },
+    {
+      key: "CA0095",
+      text: "Five Guys - CA0095",
+      value: "CA0095",
       offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      thirdParties: [
+        { name: "UberEats", offline: true },
+        { name: "Postmates", offline: false },
+        { name: "Doordash", offline: false },
+        { name: "DeliveryLogic", offline: false }
+      ]
+    },
+    {
+      key: "CA0235",
+      text: "Five Guys - CA0235",
+      value: "CA0235",
+      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      thirdParties: [
+        { name: "UberEats", offline: false },
+        { name: "Postmates", offline: false },
+        { name: "Doordash", offline: false }
+      ]
+    },
+    {
+      key: "CA0348",
+      text: "Five Guys - CA0348",
+      value: "CA0348",
+      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      thirdParties: [
+        { name: "UberEats", offline: false },
+        { name: "Postmates", offline: false },
+        { name: "Doordash", offline: false }
+      ]
+    },
+    {
+      key: "FL0168",
+      text: "Five Guys - FL0168",
+      value: "FL0168",
+      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      thirdParties: [
+        { name: "UberEats", offline: false },
+        { name: "Postmates", offline: false },
+        { name: "Doordash", offline: false }
+      ]
+    },
+    {
+      key: "NY0026",
+      text: "Five Guys - NY0026",
+      value: "NY0026",
+      offline: false,
+      scheduled: false,
+      scheduledFor: "",
       thirdParties: [
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },

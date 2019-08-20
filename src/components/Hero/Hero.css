@@ -5,6 +5,7 @@
 
 .jumbotron {
   padding: 4rem 1.5rem 0rem;
+  margin-bottom: 0;
 }
 
 .first-filter {
@@ -25,6 +26,8 @@
   padding: 0.5rem 1rem 0.5rem 0rem;
 }
 
-.dropdown-divider {
+.hero-divider {
   margin: 2rem 0 0.5rem;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
 }

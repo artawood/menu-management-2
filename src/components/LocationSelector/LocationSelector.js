@@ -5,16 +5,16 @@ import "./LocationSelector.css";
 import data from "../../models/data.js";
 
 class LocationSelector extends React.Component {
-  state = {
-    value: {}
-  };
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
       <Dropdown
         search
         selection
-        defaultValue={this.state.value}
+        defaultValue={this.props.id}
         options={data.location}
         placeholder="Select Location"
         name="Location"

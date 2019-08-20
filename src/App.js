@@ -13,9 +13,8 @@ import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
-import Dashboard from "./pages/Dashboard";
-import Homepage from "./pages/Homepage";
 import LocationManagement from "./pages/LocationManagement";
+import MenuManagement from "./pages/MenuManagement";
 import ItemDetails from "./pages/ItemDetails";
 import EditItemDetails from "./pages/EditItemDetails";
 
@@ -29,9 +28,10 @@ class App extends React.Component {
         <ScrollToTop>
           <Header />
           <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/menu-management" component={Dashboard} />
+            <Route exact path="/" component={LocationManagement} />
             <Route exact path="/location-management" component={LocationManagement} />
+            <Route exact path="/menu-management" component={MenuManagement} />
+            <Route exact path="/menu-management/:id" component={MenuManagement} />
             <Route exact path="/itemdetails/" component={ItemDetails} />
             <Route exact path="/itemdetails/:id" component={ItemDetails} />
             <Route exact path="/edit/itemdetails/" component={EditItemDetails} />
