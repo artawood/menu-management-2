@@ -7,4 +7,4 @@ const options = [
   { key: 3, text: "Clear Filter", value: 3 }
 ];
 
-export const StatusFilter = () => <Dropdown text="Status" options={options} />;
+export const StatusFilter = props => <Dropdown text="Status" options={options} onChange={props.sortByStatus} />;

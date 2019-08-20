@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Hamburger, Logo } from "../Icons";
 import { Navbar } from "react-bootstrap";
 
+const style = {
+  color: "#000000"
+};
 class Header extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -28,23 +31,20 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar bg="white" variant="dark" fixed="top" className="shadow navbar-large">
-        <h1 className="pt-3 pr-4 menu-btn" onClick={() => this.onSetSidebarDocked()}>
+        {/* <h1 className="pt-3 pr-4 menu-btn" onClick={() => this.onSetSidebarDocked()}>
           <Hamburger width="45" height="40" />
-        </h1>
+        </h1> */}
         <Navbar.Brand className="pl-2">
           <Link to="/">
-            {/* <img
-              alt=""
-              src="https://www.itsacheckmate.com/wp-content/uploads/2019/05/ItsaCheckmateLogo_Horizontal_Color_4.png"
-              className="d-inline-block align-top logo"
-            /> */}
-            <Logo height="44" />
+            <Logo height="32" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            {/* <span className="login-text">Signed in as: <span className="username">Vishal Agarwal</span></span> */}
+          <Navbar.Text className="mr-4">
+            <Link to="/" style={style}>
+              Log Out
+            </Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

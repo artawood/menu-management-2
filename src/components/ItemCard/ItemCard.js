@@ -1,8 +1,11 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { Card, Row, Col, Dropdown, Nav } from "react-bootstrap";
+import { Card, Row, Col, Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SoldOutSwitch from "../ToggleSoldOut";
+import SoldOutDayDropdown from "../SoldOutDayDropdown";
+import SoldOutDuration from "../SoldOutDuration";
+import { Edit, Warning } from "../Icons";
 import CustomDropdown from "../CustomDropdown";
 import styled from "styled-components";
 //Uncomment if using thes features
@@ -54,7 +57,11 @@ class ItemCard extends React.Component {
                       <i class="fas fa-ellipsis-h" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Delete Item</Dropdown.Item>
+                      <Dropdown.Item eventKey="1">
+                        <Link to={"/itemdetails/" + this.props.item.id}>See Details</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Divider />
+                      <Dropdown.Item eventKey="2">Delete Item</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Col>
@@ -69,16 +76,38 @@ class ItemCard extends React.Component {
             </Card.Body>
             <Card.Footer>
               <Row>
-                <Col xs="7">
-                  <div className="d-flex mt-2">
-                    <SoldOutSwitch enabled={this.props.item.soldOut ? false : true} className="pr-2" />
+                <Col xs="12">
+                  <div className="d-flex">
+                    <div className="d-flex mt-2">
+                      <SoldOutSwitch enabled={this.props.item.soldOut ? false : true} className="pr-2" />
+                    </div>
+                    {!this.props.item.soldOut ? null : this.props.item.scheduled ? (
+                      <div className="d-flex" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
+                        <SoldOutDuration soldOutDuration={this.props.item.scheduledFor} />
+                        <div className="">
+                          <Edit className="pl-2" onClick={this.toggleEditSoldOutSchedule} />
+                        </div>
+                      </div>
+                    ) : (
+                      <SoldOutDayDropdown />
+                    )}
+                    {this.props.modifierSoldOut && !this.props.item.soldOut ? (
+                      <OverlayTrigger
+                        placement="right"
+                        overlay={<Tooltip>At least one or more modifiers in this item is sold out.</Tooltip>}
+                      >
+                        <div>
+                          <Warning width="20px" height="20px" className="mt-2" />
+                        </div>
+                      </OverlayTrigger>
+                    ) : null}
                   </div>
                 </Col>
-                <Col xs="5" className="text-right">
+                {/* <Col xs="4" className="text-right">
                   <Link className="see-details" to={"/itemdetails/" + this.props.item.id}>
                     See Details
                   </Link>
-                </Col>
+                </Col> */}
               </Row>
             </Card.Footer>
           </Card>

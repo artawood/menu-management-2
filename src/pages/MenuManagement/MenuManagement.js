@@ -1,12 +1,13 @@
 import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import SidebarContent from "../../components/SidebarContent";
 import Hero from "../../components/Hero";
 import MenuSection from "../../components/MenuSection";
+import { Add } from "../../components/Icons";
 
 import data from "../../models/data.js";
 
@@ -14,7 +15,7 @@ const Section = styled.div`
   display: flex;
 `;
 
-class Dashboard extends React.Component {
+class MenuManagement extends React.Component {
   state = data;
 
   // Ordering logic
@@ -97,12 +98,22 @@ class Dashboard extends React.Component {
   };
 
   render() {
+    const id = this.props.match.params.id;
     return (
       <div className="App">
-        <Header toggleSidebar={this.onSetSidebarDocked} />
-        <Sidebar sidebar={<SidebarContent />} docked={true}>
-          <Container fluid className="pt-4 pl-6">
+        <Sidebar sidebar={<SidebarContent id={id} />} docked={true}>
+          <Container fluid className="pl-6">
             <Hero className="pb-5" title="Menu Management" />
+            <Row className="py-3">
+              <Col xs="8" />
+              <Col xs="4" className="text-right">
+                <div className="pr-4">
+                  <h4>
+                    <Add width="20" /> Add Category
+                  </h4>
+                </div>
+              </Col>
+            </Row>
             <Container fluid>
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="all-columns" direction="vertical" type="column">
@@ -140,4 +151,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+export default MenuManagement;

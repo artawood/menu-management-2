@@ -5,11 +5,12 @@ import ToggleOffline from "../../components/ToggleOffline";
 import { MenuManagement, ChevronDown } from "../Icons";
 
 const style = {
-  color: "red"
+  color: "red",
+  paddingRight: "5px"
 };
 
 const LocationCard = props => (
-  <Accordion>
+  <Accordion {...(props.expand ? { activeKey: "0" } : {})}>
     <Card className="mb-2">
       <Card.Body>
         <Row className="pb-1">
@@ -23,7 +24,7 @@ const LocationCard = props => (
           </Col>
           <Col xs="3">
             <Nav.Link>
-              <Link to="/menu-management">
+              <Link to={"/menu-management/" + props.value}>
                 <MenuManagement width="20" height="20" className="pr-1" />
                 Manage Menu
               </Link>
@@ -31,7 +32,7 @@ const LocationCard = props => (
           </Col>
           <Col xs="3">
             <Accordion.Toggle as={Nav.Link} variant="link" eventKey="0">
-              ({props.thirdParties.length}) Third Parties <span style={style}>( ) Offline</span>{" "}
+              ({props.thirdParties.length}) Third Parties <span style={style}>( ) Offline</span>
               <ChevronDown width="15" />
             </Accordion.Toggle>
           </Col>
@@ -39,6 +40,7 @@ const LocationCard = props => (
       </Card.Body>
       <Accordion.Collapse eventKey="0">
         <Card.Body>
+          <div className="divider mb-3" />
           <Row>
             {props.thirdParties.map(thirdParty => {
               return (

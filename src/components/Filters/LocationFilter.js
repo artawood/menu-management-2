@@ -9,4 +9,4 @@ const options = [
   { key: 5, text: "Clear Filter", value: 5 }
 ];
 
-export const LocationFilter = () => <Dropdown text="Location" options={options} />;
+export const LocationFilter = props => <Dropdown text="Location" options={options} onChange={props.sortByLocation} />;

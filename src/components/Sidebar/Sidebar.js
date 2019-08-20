@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+//default settings
+//content.transition: "left .3s ease-out, right .3s ease-out"
+//sidebar.transition: "transform .3s ease-out"
+//sidebar.WebkitTransition: "-webkit-transform .3s ease-out"
+
 const CANCEL_DISTANCE_ON_SCROLL = 20;
 
 const defaultStyles = {
@@ -17,8 +22,8 @@ const defaultStyles = {
     position: "absolute",
     top: 0,
     bottom: 0,
-    transition: "transform .3s ease-out",
-    WebkitTransition: "-webkit-transform .3s ease-out",
+    transition: "transform .5s ease-out",
+    WebkitTransition: "-webkit-transform .5s ease-out",
     willChange: "transform",
     overflowY: "auto"
   },
@@ -30,7 +35,7 @@ const defaultStyles = {
     bottom: 0,
     overflowY: "auto",
     WebkitOverflowScrolling: "touch",
-    transition: "left .3s ease-out, right .3s ease-out"
+    transition: ""
   },
   overlay: {
     zIndex: 1,
@@ -80,8 +85,7 @@ class Sidebar extends Component {
   componentDidMount() {
     const isIos = /iPad|iPhone|iPod/.test(navigator ? navigator.userAgent : "");
     this.setState({
-      dragSupported:
-        typeof window === "object" && "ontouchstart" in window && !isIos
+      dragSupported: typeof window === "object" && "ontouchstart" in window && !isIos
     });
     this.saveSidebarWidth();
   }
@@ -125,9 +129,7 @@ class Sidebar extends Component {
       const touchWidth = this.touchSidebarWidth();
 
       if (
-        (this.props.open &&
-          touchWidth <
-            this.state.sidebarWidth - this.props.dragToggleDistance) ||
+        (this.props.open && touchWidth < this.state.sidebarWidth - this.props.dragToggleDistance) ||
         (!this.props.open && touchWidth > this.props.dragToggleDistance)
       ) {
         this.props.onSetOpen(!this.props.open);
@@ -159,13 +161,9 @@ class Sidebar extends Component {
     let cancelDistanceOnScroll;
 
     if (this.props.pullRight) {
-      cancelDistanceOnScroll =
-        Math.abs(this.state.touchCurrentX - this.state.touchStartX) <
-        CANCEL_DISTANCE_ON_SCROLL;
+      cancelDistanceOnScroll = Math.abs(this.state.touchCurrentX - this.state.touchStartX) < CANCEL_DISTANCE_ON_SCROLL;
     } else {
-      cancelDistanceOnScroll =
-        Math.abs(this.state.touchStartX - this.state.touchCurrentX) <
-        CANCEL_DISTANCE_ON_SCROLL;
+      cancelDistanceOnScroll = Math.abs(this.state.touchStartX - this.state.touchCurrentX) < CANCEL_DISTANCE_ON_SCROLL;
     }
     return cancelDistanceOnScroll;
   }
@@ -198,34 +196,20 @@ class Sidebar extends Component {
     // we will only drag the distance they moved their finger
     // otherwise we will move the sidebar to be below the finger.
     if (this.props.pullRight) {
-      if (
-        this.props.open &&
-        window.innerWidth - this.state.touchStartX < this.state.sidebarWidth
-      ) {
+      if (this.props.open && window.innerWidth - this.state.touchStartX < this.state.sidebarWidth) {
         if (this.state.touchCurrentX > this.state.touchStartX) {
-          return (
-            this.state.sidebarWidth +
-            this.state.touchStartX -
-            this.state.touchCurrentX
-          );
+          return this.state.sidebarWidth + this.state.touchStartX - this.state.touchCurrentX;
         }
         return this.state.sidebarWidth;
       }
-      return Math.min(
-        window.innerWidth - this.state.touchCurrentX,
-        this.state.sidebarWidth
-      );
+      return Math.min(window.innerWidth - this.state.touchCurrentX, this.state.sidebarWidth);
     }
 
     if (this.props.open && this.state.touchStartX < this.state.sidebarWidth) {
       if (this.state.touchCurrentX > this.state.touchStartX) {
         return this.state.sidebarWidth;
       }
-      return (
-        this.state.sidebarWidth -
-        this.state.touchStartX +
-        this.state.touchCurrentX
-      );
+      return this.state.sidebarWidth - this.state.touchStartX + this.state.touchCurrentX;
     }
     return Math.min(this.state.touchCurrentX, this.state.sidebarWidth);
   }
@@ -253,8 +237,7 @@ class Sidebar extends Component {
     };
     let dragHandle;
 
-    const hasBoxShadow =
-      this.props.shadow && (isTouching || this.props.open || this.props.docked);
+    const hasBoxShadow = this.props.shadow && (isTouching || this.props.open || this.props.docked);
     // sidebarStyle right/left
     if (this.props.pullRight) {
       sidebarStyle.right = 0;
@@ -281,8 +264,7 @@ class Sidebar extends Component {
         sidebarStyle.WebkitTransform = `translateX(${(1 - percentage) * 100}%)`;
       } else {
         sidebarStyle.transform = `translateX(-${(1 - percentage) * 100}%)`;
-        sidebarStyle.WebkitTransform = `translateX(-${(1 - percentage) *
-          100}%)`;
+        sidebarStyle.WebkitTransform = `translateX(-${(1 - percentage) * 100}%)`;
       }
 
       // fade overlay to match distance of drag
@@ -369,11 +351,7 @@ class Sidebar extends Component {
           id={this.props.overlayId}
         />
         {/* eslint-enable */}
-        <div
-          className={this.props.contentClassName}
-          style={contentStyle}
-          id={this.props.contentId}
-        >
+        <div className={this.props.contentClassName} style={contentStyle} id={this.props.contentId}>
           {dragHandle}
           {this.props.children}
         </div>

@@ -49,6 +49,7 @@ class MenuSection extends React.Component {
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item>Add Item</Dropdown.Item>
+                        <Dropdown.Divider />
                         <Dropdown.Item>Delete Category</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>

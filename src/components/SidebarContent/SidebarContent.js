@@ -6,17 +6,14 @@ import "./SidebarContent.css";
 // Modal Components
 import FetchData from "../Modals/FetchDataModal";
 import PushChanges from "../Modals/PushChangesModal";
-import SorryNoAddModal from "../Modals/SorryNoAddModal";
-// import FeatureNotAvailableModal from "../Modals/FeatureNotAvailableModal";
-import FeatureNotAvailableModal2 from "../Modals/FeatureNotAvailableModal2";
-// import { ReactComponent as HomeIcon } from "../../images/icon-home.svg";
 import { Home } from "../Icons";
+import LocationSelector from "../LocationSelector";
 
 const styles = {
   sidebar: {
     width: 250,
     height: "100%",
-    padding: "80px 0px 0px 0px",
+    padding: "50px 0px 0px 0px",
     boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px",
     backgroundColor: "#141A25"
   },
@@ -42,7 +39,7 @@ const styles = {
   navLink: {
     fontWeight: 500,
     color: "#DFDFDF",
-    fontSize: 22
+    fontSize: 14
   },
   isActive: {
     color: "#FFFFFF"
@@ -59,21 +56,16 @@ const SidebarContent = props => {
       <nav class="d-none d-md-block sidebar">
         <div className="sidebar-sticky">
           <ul className="nav flex-column option">
-            <li className="nav-item hover">
-              <Link to="/" className="nav-link active ml-5">
-                <span data-feather="home">
-                  <Home className="" width="32" height="32" />
-                </span>
-                <span className="curren-page">Home</span>
+            <li className="nav-item hover mx-auto mb-5">
+              <Link style={styles.navLink} to="/location-management">
+                &lt; Back to Location Management
               </Link>
+            </li>
+            <li className="nav-item hover mx-auto pb-3">
+              <LocationSelector id={props.id} />
             </li>
             <FetchData />
             <PushChanges onClick={() => this.props.pushTimeStamp(newTimeStamp)} />
-          </ul>
-          <div class="dropdown-divider" />
-          <ul className="nav flex-column mb-2">
-            {/* <FeatureNotAvailableModal /> */}
-            <FeatureNotAvailableModal2 />
           </ul>
         </div>
       </nav>
