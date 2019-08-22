@@ -4,7 +4,7 @@ import isString from "lodash/isString";
 import React, { Component } from "react";
 import isBoolean from "lodash/isBoolean";
 import isFunction from "lodash/isFunction";
-import "./index.css";
+import "../index.css";
 import { Row, Col } from "react-bootstrap";
 
 class ToggleSwitch extends Component {
@@ -44,41 +44,20 @@ class ToggleSwitch extends Component {
     const { enabled } = this.state;
 
     // Isolate special props and store the remaining as restProps
-    const {
-      enabled: _enabled,
-      theme,
-      onClick,
-      className,
-      onStateChanged,
-      ...restProps
-    } = this.props;
+    const { enabled: _enabled, theme, onClick, className, onStateChanged, ...restProps } = this.props;
 
     // Use default as a fallback theme if valid theme is not passed
     const switchTheme = theme && isString(theme) ? theme : "default";
 
-    const switchClasses = classnames(
-      `switch switch--${switchTheme}`,
-      className
-    );
+    const switchClasses = classnames(`switch switch--${switchTheme}`, className);
 
-    const togglerClasses = classnames(
-      "switch-toggle",
-      `switch-toggle--${enabled ? "on" : "off"}`
-    );
+    const togglerClasses = classnames("switch-toggle", `switch-toggle--${enabled ? "on" : "off"}`);
 
-    const togglerSoldOut = classnames(
-      "",
-      `${enabled ? "itemAvailable" : "itemSoldOut"}`
-    );
+    const togglerSoldOut = classnames("", `${enabled ? "itemAvailable" : "itemSoldOut"}`);
 
     return (
       <Row>
-        <Col
-          xs="4"
-          className={switchClasses}
-          onClick={this.toggleSwitch}
-          {...restProps}
-        >
+        <Col xs="4" className={switchClasses} onClick={this.toggleSwitch} {...restProps}>
           <div className={togglerClasses} />
         </Col>
         <Col xs="8">
