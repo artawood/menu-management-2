@@ -5,7 +5,7 @@ export const MenuManagement = props => (
     width={props.width}
     height={props.height}
     className={props.className}
-    fill="#9B9898"
+    fill={props.fill}
     viewBox="55 25 35 100"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

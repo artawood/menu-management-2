@@ -2727,7 +2727,7 @@ const data = {
       key: "AL0193",
       text: "Five Guys - AL0193",
       value: "AL0193",
-      offline: false,
+      offline: true,
       scheduled: true,
       scheduledFor: "2 days",
       thirdParties: [

@@ -4,10 +4,13 @@ import isString from "lodash/isString";
 import React, { Component } from "react";
 import isBoolean from "lodash/isBoolean";
 import isFunction from "lodash/isFunction";
-import "./index.css";
-import { Row, Col } from "react-bootstrap";
+import "../index.css";
 
 class ToggleSwitch extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = { enabled: this.enabledFromProps() };
 
   isEnabled = () => this.state.enabled;
@@ -53,18 +56,10 @@ class ToggleSwitch extends Component {
 
     const togglerClasses = classnames("switch-toggle", `switch-toggle--${enabled ? "on" : "off"}`);
 
-    const togglerSoldOut = classnames("", `${enabled ? "itemAvailable" : "itemSoldOut"}`);
-
     return (
-      <Row>
-        <Col xs="4" className={switchClasses} onClick={this.toggleSwitch} {...restProps}>
-          <div className={togglerClasses} />
-        </Col>
-        <Col xs="8">
-          {/* if enable is true, mark item as available. if enable is false, mark item as sold out */}
-          {enabled ? <span className={togglerSoldOut}>Online</span> : <span className={togglerSoldOut}>Offline</span>}
-        </Col>
-      </Row>
+      <div className={switchClasses} onClick={this.toggleSwitch} {...restProps}>
+        <div className={togglerClasses} />
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 export * from "./Add";
 export * from "./ChevronDown";
 export * from "./Close";
+export * from "./Cogwheel";
 export * from "./Edit";
 export * from "./Fetch";
 export * from "./Hamburger";
@@ -11,6 +12,5 @@ export * from "./LogOut";
 export * from "./Menu";
 export * from "./MenuManagement";
 export * from "./Push";
-export * from "./Setting";
 export * from "./Trash";
 export * from "./Warning";

@@ -4,8 +4,8 @@
 /* STYLES */
 /*original size h:32px w:52px*/
 .switch.switch--default > .switch-toggle {
-  height: 18px;
-  width: 35px;
+  height: 16px;
+  width: 32px;
   cursor: pointer !important;
   user-select: none !important;
   position: relative !important;
@@ -30,8 +30,8 @@
 .switch.switch--default > .switch-toggle.switch-toggle--on::after,
 .switch.switch--default > .switch-toggle.switch-toggle--off::after {
   top: 1px;
-  height: 16px;
-  width: 16px;
+  height: 14px;
+  width: 14px;
   border-radius: 14px;
   background: #ffffff !important;
   will-change: transform;
@@ -39,7 +39,7 @@
 }
 .switch.switch--default > .switch-toggle.switch-toggle--on::before {
   background: #04a89b !important;
-  color: #4a4a4a;
+  color: #04a89b;
 }
 .switch.switch--default > .switch-toggle.switch-toggle--on::after {
   transform: translateX(17px);
@@ -87,14 +87,36 @@
   transition: transform 0.4s ease-out;
 }
 .switch.switch--graphite-small > .switch-toggle.switch-toggle--on::before {
-  background: gray !important;
+  background: #d52b2b !important;
 }
 .switch.switch--graphite-small > .switch-toggle.switch-toggle--on::after {
   transform: translateX(14.5px);
 }
 .switch.switch--graphite-small > .switch-toggle.switch-toggle--off::before {
-  background: #cccccc !important;
+  background: #d52b2b !important;
 }
 .switch.switch--graphite-small > .switch-toggle.switch-toggle--off::after {
   transform: translateX(2px);
+}
+
+.switch-toggleSoldOut--on {
+  color: #d52b2b;
+}
+
+.switch-toggleSoldOut--off {
+  color: #04a89b;
+}
+
+.itemAvailable {
+  color: #04a89b;
+}
+
+.itemSoldOut {
+  color: #d52b2b;
+  font-weight: 500;
+}
+
+.vertical-align {
+  display: table-cell;
+  vertical-align: middle;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleSwitch from "../ToggleSwitch";
+import ToggleSwitch from "../Togglers/ToggleSwitch";
 import { InputGroup, FormControl } from "react-bootstrap";
 import RemoveModifierModal from "../Modals/RemoveModifierModal";
 
@@ -33,8 +33,7 @@ class EditModifierList extends React.Component {
   };
 
   render() {
-    const nameCalories =
-      this.state.name + " ( " + this.state.calories + " calories ) ";
+    const nameCalories = this.state.name + " ( " + this.state.calories + " calories ) ";
     return (
       <tbody>
         <tr>

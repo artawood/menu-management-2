@@ -19,6 +19,7 @@ class LocationSelector extends React.Component {
         placeholder="Select Location"
         name="Location"
         tabIndex="0"
+        clearable
       />
     );
   }

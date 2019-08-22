@@ -2,7 +2,7 @@ import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Card, Row, Col, Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import SoldOutSwitch from "../ToggleSoldOut";
+import SoldOutSwitch from "../Togglers/ToggleSoldOut";
 import SoldOutDayDropdown from "../SoldOutDayDropdown";
 import SoldOutDuration from "../SoldOutDuration";
 import { Edit, Warning } from "../Icons";

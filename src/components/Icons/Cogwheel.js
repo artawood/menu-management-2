@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Setting = props => (
+export const Cogwheel = props => (
   <svg
     width={props.width}
     height={props.height}

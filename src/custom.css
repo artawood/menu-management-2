@@ -1,3 +1,5 @@
+/*This stylesheet is used for global override and apply to all stylings in the app*/
+
 /* Implementing Roboto Font for all text tags */
 
 h1,
@@ -10,6 +12,11 @@ a,
 p {
   font-family: "Roboto", sans-serif;
   color: #4a4a4a;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .nav-link {
@@ -31,7 +38,7 @@ p {
 }
 
 .bg-gray {
-  background-color: #e8e8e8;
+  background-color: #f8f8f8;
 }
 
 .shadow {
