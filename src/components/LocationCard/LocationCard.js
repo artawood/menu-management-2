@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../Togglers/ToggleOffline";
 import { MenuManagement, ChevronDown } from "../Icons";
+import OfflineDayDropdown from "../OfflineDayDropdown";
 import "./LocationCard.css";
 
 const style = {
@@ -18,22 +19,26 @@ const style = {
   }
 };
 
+//var for adjusting responsive with conditional rendering
+const windowInnerWidth = Window.innerWidth;
+
 const LocationCard = props => (
   <Accordion {...(props.expand ? { activeKey: "0" } : {})}>
     <Card className="mb-2 p-1 location-card" style={style.card}>
       <Card.Body>
         <Row className="pb-1">
-          <Col xs="2">
+          <Col xs="3" lg="2" className="pr-0">
             <div className="mt-1">
               <Card.Title style={style.card}>{props.name}</Card.Title>
             </div>
           </Col>
-          <Col xs="2">
-            <div className="mt-1">
-              <ToggleOffline enabled={props.offline ? false : true} className="pr-2" />
+          <Col xs="3" lg="3">
+            <div className={windowInnerWidth < 769 ? "mt-1" : "mt-1 d-flex"}>
+              <ToggleOffline enabled={props.offline ? false : true} className="pr-3" />
+              {!props.offline ? null : <OfflineDayDropdown />}
             </div>
           </Col>
-          <Col xs="4">
+          <Col xs="3" lg="4">
             <div className="d-flex">
               <span className="horizontal-divider" />
               <Nav.Link className="py-0">
@@ -58,10 +63,11 @@ const LocationCard = props => (
           <Row>
             {props.thirdParties.map(thirdParty => {
               return (
-                <Col xs="3">
+                <Col xs="6" lg="3">
                   <div className="d-flex">
                     <p className="pr-2">{thirdParty.name}</p>
-                    <ToggleOffline enabled={thirdParty.offline ? false : true} className="pr-2" />
+                    <ToggleOffline enabled={thirdParty.offline ? false : true} className="pr-3" />
+                    {!thirdParty.offline ? null : <OfflineDayDropdown />}
                   </div>
                 </Col>
               );

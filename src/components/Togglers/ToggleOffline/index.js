@@ -57,10 +57,10 @@ class ToggleSwitch extends Component {
 
     return (
       <Row>
-        <Col xs="3" className={switchClasses} onClick={this.toggleSwitch} {...restProps}>
+        <Col xs="4" className={switchClasses} onClick={this.toggleSwitch} {...restProps}>
           <div className={togglerClasses} />
         </Col>
-        <Col xs="9">
+        <Col xs="8" className="pr-0">
           {/* if enable is true, mark item as available. if enable is false, mark item as sold out */}
           {enabled ? <span className={togglerSoldOut}>Online</span> : <span className={togglerSoldOut}>Offline</span>}
         </Col>

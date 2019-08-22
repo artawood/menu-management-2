@@ -87,13 +87,13 @@ class LocationManagement extends React.Component {
             </div>
           </div>
           <Row className="pb-3">
-            <Col xs="2">
+            <Col xs="3" lg="2">
               <LocationFilter sortByLocation={this.sortByLocation} />
             </Col>
-            <Col xs="2">
+            <Col xs="3" lg="3">
               <StatusFilter sortByStatus={this.sortByStatus} />
             </Col>
-            <Col xs="5">
+            <Col xs="3" lg="4">
               <ActionFilter />
             </Col>
             <Col xs="3">
@@ -106,6 +106,8 @@ class LocationManagement extends React.Component {
                   <LocationCard
                     name={site.text}
                     offline={site.offline}
+                    scheduled={site.scheduled}
+                    scheduledFor={site.scheduledFor}
                     thirdParties={site.thirdParties}
                     value={site.value}
                     expand={this.state.expand}
