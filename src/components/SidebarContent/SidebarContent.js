@@ -61,7 +61,7 @@ const SidebarContent = props => {
                 &lt; Back to Location Management
               </Link>
             </li>
-            <li className="nav-item hover mx-auto pb-3">
+            <li className="nav-item hover mx-auto mb-5">
               <LocationSelector id={props.id} />
             </li>
             <FetchData />

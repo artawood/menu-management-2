@@ -1,0 +1,13 @@
+.hover {
+  opacity: 0.8;
+}
+
+.link {
+  color: #04a89b;
+  font-size: 18px;
+}
+
+.link:hover {
+  color: #04a89b;
+  opacity: 0.75;
+}

@@ -69,7 +69,7 @@ class SampleModal extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-4" href="#">
             <span data-feather="push-changes">
-              <Push width="32" height="32" />{" "}
+              <Push width="30" height="30" className="pr-2" />
             </span>
             Push Changes
           </a>

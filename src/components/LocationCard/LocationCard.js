@@ -4,19 +4,12 @@ import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../Togglers/ToggleOffline";
 import { MenuManagement, ChevronDown } from "../Icons";
 import OfflineDayDropdown from "../OfflineDayDropdown";
-import "./LocationCard.css";
+import styles from "./LocationCard.module.css";
 
 const style = {
   card: {
     fontSize: "16px",
     overflow: "visible"
-  },
-  link: {
-    color: "#04A89B"
-  },
-  thirdPartiesOffline: {
-    color: "red",
-    paddingRight: "5px"
   }
 };
 
@@ -25,7 +18,7 @@ const windowInnerWidth = Window.innerWidth;
 
 const LocationCard = props => (
   <Accordion {...(props.expand ? { activeKey: "0" } : {})}>
-    <Card className="mb-2 p-1 location-card" style={style.card}>
+    <Card className={`mb-2 p-1 ${styles.card}`} style={style.card}>
       <Card.Body>
         <Row className="pb-1">
           <Col xs="3" lg="2" className="pr-0">
@@ -41,9 +34,9 @@ const LocationCard = props => (
           </Col>
           <Col xs="3" lg="4">
             <div className="d-flex">
-              <span className="horizontal-divider" />
+              <span className={styles.divider} />
               <Nav.Link className="py-0">
-                <Link to={"/menu-management/" + props.value} style={style.link}>
+                <Link to={"/menu-management/" + props.value} className={styles.link}>
                   <MenuManagement width="30" height="30" fill="#4A4A4A" className="pr-2" />
                   Manage Menu
                 </Link>
@@ -51,9 +44,11 @@ const LocationCard = props => (
             </div>
           </Col>
           <Col xs="3">
-            <Accordion.Toggle as={Nav} variant="link" eventKey="0" className="py-0">
-              <span>({props.thirdParties.length ? "0" : props.thirdParties.length}) Third Parties </span>
-              <span style={style.thirdPartiesOffline}>({}) Offline</span>
+            <Accordion.Toggle as={Nav.Link} variant="link" eventKey="0" className={`py-0 ${styles.toggle}`}>
+              <span className={styles.toggle}>
+                ({props.thirdParties.length ? props.thirdParties.length : "0"}) Third Parties
+              </span>
+              <span className={styles.thirdPartiesOffline}> ({}) Offline</span>
               <ChevronDown width="15" />
             </Accordion.Toggle>
           </Col>

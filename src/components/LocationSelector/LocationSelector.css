@@ -19,3 +19,8 @@
 .ui.dropdown .menu .active.item {
   font-weight: 700;
 }
+
+/* White out selected text in input field*/
+.ui.active.search.dropdown input.search:focus + .text {
+  color: #ffffff !important;
+}

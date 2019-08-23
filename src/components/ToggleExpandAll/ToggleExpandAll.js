@@ -1,14 +1,10 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-
-const style = {
-  color: "#04A89B",
-  fontSize: "18px"
-};
+import styles from "./ToggleExpandAll.module.css";
 
 const ToggleExpandAll = props => (
-  <Nav>
-    <Nav.Link onClick={props.toggleExpandAll} style={style}>
+  <Nav className={styles.hover}>
+    <Nav.Link onClick={props.toggleExpandAll} className={styles.link}>
       {props.collapseText}
     </Nav.Link>
   </Nav>
