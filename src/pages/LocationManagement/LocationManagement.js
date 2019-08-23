@@ -34,10 +34,10 @@ class LocationManagement extends React.Component {
   sortByLocation(e, data) {
     console.log(data.value);
     if (data.value === 1) {
+      // First Solution
       // function compare(a, b) {
       //   const locationA = a.text.toUpperCase();
       //   const locationB = b.text.toUpperCase();
-
       //   let comparison = 0;
       //   if (locationA && locationB) {
       //     comparison = 1;
@@ -46,11 +46,11 @@ class LocationManagement extends React.Component {
       //   }
       //   return comparison;
       // }
-
       // const sortedAZ = this.state.location.sort(compare);
       // this.setState({ location: sortedAZ });
-      const sortByLocationAZ = [].concat(this.state.location).sort((a, b) => a.text > b.text);
-      this.setState({ sortByLocation: sortByLocationAZ, sortOption: data.value });
+      //Second Solution
+      // const sortByLocationAZ = [].concat(this.state.location).sort((a, b) => a.text > b.text);
+      // this.setState({ sortByLocation: sortByLocationAZ, sortOption: data.value });
     }
   }
 
@@ -64,7 +64,7 @@ class LocationManagement extends React.Component {
     return (
       <div className="bg-gray">
         <Container className="pt-5">
-          <h1 className="pt-5">Location Management</h1>
+          <h2 className="pt-5">Location Management</h2>
           <Row className="pt-4 pb-2">
             <Col lg="4" className="">
               <LocationSearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
@@ -115,7 +115,7 @@ class LocationManagement extends React.Component {
                 );
               })
             : this.state.location.map(site => {
-                if (site.text.toLowerCase().indexOf(this.state.filterText) === -1) {
+                if (site.text.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1) {
                   return;
                 }
                 return (

@@ -11,8 +11,3 @@
   margin-top: 3px;
   border-left: 1px solid #979797;
 }
-
-/*fix for showing dropdown in the card*/
-.card {
-  overflow: visible;
-}

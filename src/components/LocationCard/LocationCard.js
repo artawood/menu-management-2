@@ -8,12 +8,13 @@ import "./LocationCard.css";
 
 const style = {
   card: {
-    fontSize: "16px"
+    fontSize: "16px",
+    overflow: "visible"
   },
   link: {
     color: "#04A89B"
   },
-  thirdParties: {
+  thirdPartiesOffline: {
     color: "red",
     paddingRight: "5px"
   }
@@ -50,8 +51,9 @@ const LocationCard = props => (
             </div>
           </Col>
           <Col xs="3">
-            <Accordion.Toggle as={Nav.Link} variant="link" eventKey="0" className="py-0">
-              ({props.thirdParties.length}) Third Parties <span style={style.thirdParties}>( ) Offline</span>
+            <Accordion.Toggle as={Nav} variant="link" eventKey="0" className="py-0">
+              <span>({props.thirdParties.length ? "0" : props.thirdParties.length}) Third Parties </span>
+              <span style={style.thirdPartiesOffline}>({}) Offline</span>
               <ChevronDown width="15" />
             </Accordion.Toggle>
           </Col>

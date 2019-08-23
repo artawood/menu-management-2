@@ -1,6 +1,9 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
 
+const style = {
+  color: "#d52b2b"
+};
 class OfflineDayDropdown extends React.Component {
   state = {
     value: "",
@@ -18,7 +21,9 @@ class OfflineDayDropdown extends React.Component {
   render() {
     return (
       <div>
-        for <Dropdown options={this.state.duration} defaultValue="1 day" />
+        <span style={style}>
+          for <Dropdown options={this.state.duration} defaultValue="1 day" />
+        </span>
       </div>
     );
   }

@@ -35,9 +35,9 @@ class Header extends React.Component {
           {/* <h1 className="pt-3 pr-4 menu-btn" onClick={() => this.onSetSidebarDocked()}>
           <Hamburger width="45" height="40" />
         </h1> */}
-          <Navbar.Brand className="pl-2">
+          <Navbar.Brand>
             <Link to="/">
-              <Logo height="32" />
+              <Logo height="40" />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle />
