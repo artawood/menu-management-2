@@ -12,5 +12,6 @@ export * from "./LogOut";
 export * from "./Menu";
 export * from "./MenuManagement";
 export * from "./Push";
+export * from "./Search";
 export * from "./Trash";
 export * from "./Warning";
