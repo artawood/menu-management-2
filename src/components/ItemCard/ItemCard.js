@@ -3,7 +3,7 @@ import { Draggable } from "react-beautiful-dnd";
 import { Card, Row, Col, Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SoldOutSwitch from "../Togglers/ToggleSoldOut";
-import SoldOutDayDropdown from "../SoldOutDayDropdown";
+import OfflineDayDropdown from "../OfflineDayDropdown";
 import SoldOutDuration from "../SoldOutDuration";
 import { Edit, Warning } from "../Icons";
 import CustomDropdown from "../CustomDropdown";
@@ -78,7 +78,7 @@ class ItemCard extends React.Component {
               <Row>
                 <Col xs="12">
                   <div className="d-flex">
-                    <div className="d-flex mt-2">
+                    <div className="d-flex">
                       <SoldOutSwitch enabled={this.props.item.soldOut ? false : true} className="pr-2" />
                     </div>
                     {!this.props.item.soldOut ? null : this.props.item.scheduled ? (
@@ -89,7 +89,7 @@ class ItemCard extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <SoldOutDayDropdown />
+                      <OfflineDayDropdown className="mt-2" />
                     )}
                     {this.props.modifierSoldOut && !this.props.item.soldOut ? (
                       <OverlayTrigger

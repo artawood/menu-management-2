@@ -31,7 +31,7 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar bg="white" variant="dark" fixed="top" className="shadow navbar-large">
-        <Container>
+        <Container fluid>
           {/* <h1 className="pt-3 pr-4 menu-btn" onClick={() => this.onSetSidebarDocked()}>
           <Hamburger width="45" height="40" />
         </h1> */}

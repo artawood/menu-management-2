@@ -2,7 +2,7 @@ import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import Header from "../../components/Header";
+import Header from "../../components/Header2";
 import Sidebar from "../../components/Sidebar";
 import SidebarContent from "../../components/SidebarContent";
 import Hero from "../../components/Hero";
@@ -101,17 +101,19 @@ class MenuManagement extends React.Component {
     const id = this.props.match.params.id;
     return (
       <div className="App">
+        <Header />
         <Sidebar sidebar={<SidebarContent id={id} />} docked={true}>
           <Container fluid className="pl-6">
             <Hero className="pb-5" title="Menu Management" />
             <Row className="py-3">
               <Col xs="8" />
               <Col xs="4" className="text-right">
-                <div className="pr-4">
+                {/* Uncomment if we're allowing user menu creation option */}
+                {/* <div className="pr-4">
                   <h4>
                     <Add width="20" /> Add Category
                   </h4>
-                </div>
+                </div> */}
               </Col>
             </Row>
             <Container fluid>

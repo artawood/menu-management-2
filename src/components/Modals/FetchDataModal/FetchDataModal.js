@@ -37,7 +37,7 @@ class FetchDataModal extends React.Component {
         <li className="nav-item hover" onClick={this.handleShow}>
           <a className="nav-link ml-4" href="#">
             <span data-feather="fetch-data">
-              <Fetch width="32" height="32" />{" "}
+              <Fetch width="30" height="30" className="pr-2" />
             </span>
             Fetch Data
           </a>

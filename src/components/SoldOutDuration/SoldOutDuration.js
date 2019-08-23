@@ -5,7 +5,7 @@ const style = {
   fontStyle: "italic"
 };
 const SoldOutDuration = props => (
-  <div className="mt-2">
+  <div className="">
     <span style={style}>for {props.soldOutDuration}</span>
   </div>
 );
