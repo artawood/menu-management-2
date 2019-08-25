@@ -16,7 +16,8 @@ class LocationManagement extends React.Component {
       location: data.location,
       filterText: "",
       collapseText: "Expand All",
-      expand: false,
+      expandAll: false,
+      expandOne: false,
       sortByOnline: false,
       sortByLocation: [],
       sortOption: ""
@@ -34,30 +35,16 @@ class LocationManagement extends React.Component {
   sortByLocation(e, data) {
     console.log(data.value);
     if (data.value === 1) {
-      // First Solution
-      // function compare(a, b) {
-      //   const locationA = a.text.toUpperCase();
-      //   const locationB = b.text.toUpperCase();
-      //   let comparison = 0;
-      //   if (locationA && locationB) {
-      //     comparison = 1;
-      //   } else if (locationA > locationB) {
-      //     comparison = -1;
-      //   }
-      //   return comparison;
-      // }
-      // const sortedAZ = this.state.location.sort(compare);
-      // this.setState({ location: sortedAZ });
-      //Second Solution
+      //TODO: Sort locations by A - Z
       // const sortByLocationAZ = [].concat(this.state.location).sort((a, b) => a.text > b.text);
-      // this.setState({ sortByLocation: sortByLocationAZ, sortOption: data.value });
+      // this.setState({ location: sortByLocationAZ, sortOption: data.value });
     }
   }
 
   toggleExpandAll() {
-    return this.state.expand
-      ? this.setState({ collapseText: "Expand All", expand: false })
-      : this.setState({ collapseText: "Collapse All", expand: true });
+    return this.state.expandAll
+      ? this.setState({ collapseText: "Expand All", expandAll: false })
+      : this.setState({ collapseText: "Collapse All", expandAll: true });
   }
 
   render() {
@@ -100,34 +87,22 @@ class LocationManagement extends React.Component {
               <ThirdPartyFilter thirdParties={this.state.thirdParties} />
             </Col>
           </Row>
-          {this.state.sortOption === "1"
-            ? this.state.sortByLocation.map(site => {
-                return (
-                  <LocationCard
-                    name={site.text}
-                    offline={site.offline}
-                    scheduled={site.scheduled}
-                    scheduledFor={site.scheduledFor}
-                    thirdParties={site.thirdParties}
-                    value={site.value}
-                    expand={this.state.expand}
-                  />
-                );
-              })
-            : this.state.location.map(site => {
-                if (site.text.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1) {
-                  return;
-                }
-                return (
-                  <LocationCard
-                    name={site.text}
-                    offline={site.offline}
-                    thirdParties={site.thirdParties}
-                    value={site.value}
-                    expand={this.state.expand}
-                  />
-                );
-              })}
+          {this.state.location.map(site => {
+            if (site.text.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1) {
+              return;
+            }
+            return (
+              <LocationCard
+                name={site.text}
+                live={site.live}
+                offline={site.offline}
+                thirdParties={site.thirdParties}
+                value={site.value}
+                expandAll={this.state.expandAll}
+                expandOne={this.state.expandOne}
+              />
+            );
+          })}
           {/* {this.state.location.map(site => {
             if (site.text.toLowerCase().indexOf(this.state.filterText) === -1) {
               return;

@@ -5,10 +5,6 @@ import "./LocationSelector.css";
 import data from "../../models/data.js";
 
 class LocationSelector extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Dropdown

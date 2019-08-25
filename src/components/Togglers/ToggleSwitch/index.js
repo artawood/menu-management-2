@@ -7,10 +7,6 @@ import isFunction from "lodash/isFunction";
 import "../index.css";
 
 class ToggleSwitch extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = { enabled: this.enabledFromProps() };
 
   isEnabled = () => this.state.enabled;

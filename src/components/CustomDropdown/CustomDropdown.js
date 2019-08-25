@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 class CustomDropdown extends React.Component {
   constructor(props, context) {
@@ -15,9 +17,11 @@ class CustomDropdown extends React.Component {
 
   render() {
     return (
-      <a href="" onClick={this.handleClick}>
-        {this.props.children}
-      </a>
+      <Link to="" onClick={this.handleClick}>
+        <Nav>
+          <Nav.Link>{this.props.children}</Nav.Link>
+        </Nav>
+      </Link>
     );
   }
 }

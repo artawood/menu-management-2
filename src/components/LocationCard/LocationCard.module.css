@@ -20,6 +20,23 @@
   color: #04a89b;
 }
 
+.overlay {
+  background-color: #4a4a4a;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlayText {
+  color: #ffffff;
+  opacity: 0.8;
+  text-align: center;
+  font-style: italic;
+}
 .toggle {
   color: #4a4a4a;
 }
@@ -31,4 +48,26 @@
 .thirdPartiesOffline {
   color: red;
   padding-right: 5px;
+}
+
+.rotateUp {
+  animation: rotateUp 0.4s ease-out forwards;
+}
+
+.rotateDown {
+  animation: rotateDown 0.4s ease-out;
+}
+
+@keyframes rotateUp {
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotateDown {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

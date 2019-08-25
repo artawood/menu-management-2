@@ -11,7 +11,7 @@ import { Add } from "../../components/Icons";
 
 import data from "../../models/data.js";
 
-const Section = styled.div`
+const RenderArea = styled.div`
   display: flex;
 `;
 
@@ -118,9 +118,9 @@ class MenuManagement extends React.Component {
             </Row>
             <Container fluid>
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>
-                <Droppable droppableId="all-columns" direction="vertical" type="column">
+                <Droppable droppableId="all-sections" direction="vertical" type="column">
                   {provided => (
-                    <Section
+                    <RenderArea
                       {...provided.droppableProps}
                       innerRef={provided.innerRef}
                       ref={provided.innerRef}
@@ -141,7 +141,7 @@ class MenuManagement extends React.Component {
                         );
                       })}
                       {provided.placeholder}
-                    </Section>
+                    </RenderArea>
                   )}
                 </Droppable>
               </DragDropContext>
