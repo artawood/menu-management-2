@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../Togglers/ToggleOffline";
-import { MenuManagement, ChevronDown } from "../Icons";
+import { MenuManagement, ChevronDown, Warning } from "../Icons";
 import OfflineDayDropdown from "../OfflineDayDropdown";
 import styles from "./LocationCard.module.css";
 
@@ -32,6 +32,13 @@ class LocationCard extends React.Component {
     return (
       <Accordion {...(this.props.expandAll ? { activeKey: "0" } : {})}>
         <Card className={`mb-2 p-1 ${styles.card}`} style={style.card}>
+          {this.props.live ? (
+            <div className={styles.overlay}>
+              <h2 className={`mt-2 ${styles.overlayText}`}>
+                <Warning height="20" /> &nbsp; Not live with ItsaCheckmate
+              </h2>
+            </div>
+          ) : null}
           <Card.Body>
             <Row className="pb-1">
               <Col xs="3" lg="2" className="pr-0">

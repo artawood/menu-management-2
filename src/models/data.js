@@ -2755,6 +2755,7 @@ const data = {
       text: "Five Guys - AL0048",
       value: "AL0048",
       scheduled: false,
+      live: true,
       scheduledFor: "",
       scheduledFor: "2 days",
       thirdParties: [

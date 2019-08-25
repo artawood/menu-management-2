@@ -94,6 +94,7 @@ class LocationManagement extends React.Component {
             return (
               <LocationCard
                 name={site.text}
+                live={site.live}
                 offline={site.offline}
                 thirdParties={site.thirdParties}
                 value={site.value}

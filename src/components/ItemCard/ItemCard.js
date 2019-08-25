@@ -7,7 +7,6 @@ import OfflineDayDropdown from "../OfflineDayDropdown";
 import SoldOutDuration from "../SoldOutDuration";
 import { Edit, Warning } from "../Icons";
 import CustomDropdown from "../CustomDropdown";
-import styled from "styled-components";
 //Uncomment if using thes features
 // import EditItemNameModal from "../Modals/EditItemNameModal";
 // import EditItemPriceModal from "../Modals/EditItemPriceModal";
@@ -15,16 +14,6 @@ import styled from "styled-components";
 
 //Custom CSS
 import "./ItemCard.css";
-
-const Container = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  padding: 8px;
-  margin-bottom: 8px;
-  transition: background-color 0.2s ease;
-  background-color: ${props => (props.isDragging ? "lightblue" : "white")};
-  display: flex;
-`;
 
 class ItemCard extends React.Component {
   handleInputChange = event => {
@@ -85,7 +74,7 @@ class ItemCard extends React.Component {
                       <div className="d-flex" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
                         <SoldOutDuration soldOutDuration={this.props.item.scheduledFor} />
                         <div className="">
-                          <Edit className="pl-2" onClick={this.toggleEditSoldOutSchedule} />
+                          <Edit className="pl-2" width="30" onClick={this.toggleEditSoldOutSchedule} />
                         </div>
                       </div>
                     ) : (
@@ -97,7 +86,7 @@ class ItemCard extends React.Component {
                         overlay={<Tooltip>At least one or more modifiers in this item is sold out.</Tooltip>}
                       >
                         <div>
-                          <Warning width="20px" height="20px" className="mt-2" />
+                          <Warning width="30" className="mt-2" />
                         </div>
                       </OverlayTrigger>
                     ) : null}
