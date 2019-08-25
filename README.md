@@ -40,7 +40,7 @@ Note: Latest version 12.4.0 is recommended, but no less than version 8.x
 2. Clone GitHub repository and change to directory of cloned repository.
 
 ```
-git clone https://github.com/artawood/menu-management.git menu-management
+git clone https://github.com/artawood/menu-management-2.git cozio
 cd menu-management
 ```
 
