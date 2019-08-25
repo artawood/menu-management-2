@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Cozio Portal
+This is a prototype of the Cozio Portal. This portal contains the one-stop shop for end-users to be able to manage locations and menus of their brand.
 
-## Available Scripts
+## Location Management Module
 
-In the project directory, you can run:
+This module gives ability to the end user to manage locations with the following features:
 
-### `npm start`
+### Search Location
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The search input has dynamic filtering of the list as you type.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Sort Location
 
-### `npm test`
+Allow to sort location by decending or ascending in alphabetical order, sort by live vs. not live.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Manage Online/Offline of a location
 
-### `npm run build`
+User can turn online/offline of a location. There's also another option for the user to turn online/offline for all location.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Menu Management (Version 2.0)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This module gives the ability to the end users to manage menu with the following features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Drag and Drop
 
-### `npm run eject`
+Users can drag and drop menu items to reorder menu items within a menu section. User can also drag and drop menu items to move menu items between menu sections.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Create, delete, edit menu items, modifiers, and menu sections
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Users have the CRUD functions for menu sections, menu items, modifiers
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Development
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Initial setup
 
-## Learn More
+1. Install Node [Node](https://nodejs.org/en/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Note: Latest version 12.4.0 is recommended, but no less than version 8.x
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Clone GitHub repository and change to directory of cloned repository.
 
-### Code Splitting
+```
+git clone https://github.com/artawood/menu-management.git menu-management
+cd menu-management
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+3. Install development dependencies.
 
-### Analyzing the Bundle Size
+```
+npm install
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### !important
 
-### Making a Progressive Web App
+Please be sure to include the following in the head tag in this order:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+<!-- Semantic UI -->
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+/>
+<!-- Bootstrap -->
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<!-- Font Awesome -->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+  crossorigin="anonymous"
+/>
+<!-- Google Font Roboto -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"
+  rel="stylesheet"
+/>
 
-### Advanced Configuration
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Running Locally
 
-### Deployment
+```
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Browser should automatically open. If not, open [http://localhost:3000](http://localhost:3000) to view it in the browser.

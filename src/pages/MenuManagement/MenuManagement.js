@@ -118,7 +118,7 @@ class MenuManagement extends React.Component {
             </Row>
             <Container fluid>
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>
-                <Droppable droppableId="all-columns" direction="vertical" type="column">
+                <Droppable droppableId="all-sections" direction="vertical" type="column">
                   {provided => (
                     <Section
                       {...provided.droppableProps}
