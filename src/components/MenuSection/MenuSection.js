@@ -31,7 +31,7 @@ const ItemList = styled.div`
 class MenuSection extends React.Component {
   render() {
     return (
-      <Draggable draggableId={this.props.section.id} index={this.props.index}>
+      <Draggable draggableId={this.props.section.id} index={this.props.index} isDragDisabled={true}>
         {provided => (
           <Container {...provided.draggableProps} innerRef={provided.innerRef} ref={provided.innerRef}>
             <Title {...provided.dragHandleProps}>
