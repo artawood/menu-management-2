@@ -18,9 +18,7 @@ class CustomDropdown extends React.Component {
   render() {
     return (
       <Link to="" onClick={this.handleClick}>
-        <Nav>
-          <Nav.Link>{this.props.children}</Nav.Link>
-        </Nav>
+        {this.props.children}
       </Link>
     );
   }

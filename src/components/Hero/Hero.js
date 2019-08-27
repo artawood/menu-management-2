@@ -12,7 +12,7 @@ const Hero = props => (
       </Col>
       <Col md="4" />
     </Row>
-    <div class="hero-divider py-1" />
+    <div className="hero-divider py-1" />
     <Nav activeKey="all" onSelect={selectedKey => alert(`filter ${selectedKey}`)} />
   </Jumbotron>
 );
