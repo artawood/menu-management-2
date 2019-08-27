@@ -45,7 +45,7 @@ class MenuSection extends React.Component {
                   <div className="px-2">
                     <Dropdown alignRight>
                       <Dropdown.Toggle as={CustomDropdown}>
-                        <i class="fas fa-ellipsis-h" />
+                        <i className="fas fa-ellipsis-h" />
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item>Add Item</Dropdown.Item>

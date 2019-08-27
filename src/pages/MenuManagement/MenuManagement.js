@@ -99,6 +99,16 @@ class MenuManagement extends React.Component {
 
   render() {
     const id = this.props.match.params.id;
+    let sectionContent = (
+      <div className="row">
+        {this.state.menuSectionOrder.map((sectionId, index) => {
+          const section = this.state.menu_sections[sectionId];
+          const items = section.menu_items.map(itemId => this.state.menu_items[itemId]);
+
+          return <MenuSection key={section.id} section={section} items={items} index={index} className="col-auto" />;
+        })}
+      </div>
+    );
     return (
       <div className="App">
         <Header />
@@ -120,26 +130,8 @@ class MenuManagement extends React.Component {
               <DragDropContext className="ml-5" onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="all-sections" direction="vertical" type="column">
                   {provided => (
-                    <RenderArea
-                      {...provided.droppableProps}
-                      innerRef={provided.innerRef}
-                      ref={provided.innerRef}
-                      className="row"
-                    >
-                      {this.state.menuSectionOrder.map((sectionId, index) => {
-                        const section = this.state.menu_sections[sectionId];
-                        const items = section.menu_items.map(itemId => this.state.menu_items[itemId]);
-
-                        return (
-                          <MenuSection
-                            key={section.id}
-                            section={section}
-                            items={items}
-                            index={index}
-                            className="col-auto"
-                          />
-                        );
-                      })}
+                    <RenderArea {...provided.droppableProps} innerRef={provided.innerRef} ref={provided.innerRef}>
+                      {sectionContent}
                       {provided.placeholder}
                     </RenderArea>
                   )}

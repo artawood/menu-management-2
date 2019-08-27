@@ -53,7 +53,7 @@ const SidebarContent = props => {
 
   return (
     <div style={style}>
-      <nav class="d-none d-md-block sidebar">
+      <nav className="d-none d-md-block sidebar">
         <div className="sidebar-sticky">
           <ul className="nav flex-column option">
             <li className="nav-item hover mx-auto mb-5">

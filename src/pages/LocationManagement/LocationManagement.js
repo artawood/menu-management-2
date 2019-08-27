@@ -58,18 +58,20 @@ class LocationManagement extends React.Component {
             </Col>
             <Col lg="8" />
           </Row>
-          <div class="hero-divider py-1" />
+          <div className="hero-divider py-1" />
           <div className="d-flex align-items-end">
             <div className="ml-auto">
               <table>
-                <tr>
-                  <td>
-                    <ToggleExpandAll toggleExpandAll={this.toggleExpandAll} collapseText={this.state.collapseText} />
-                  </td>
-                  <td>
-                    <Setting className="pl-2" />
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <ToggleExpandAll toggleExpandAll={this.toggleExpandAll} collapseText={this.state.collapseText} />
+                    </td>
+                    <td>
+                      <Setting className="pl-2" />
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -93,6 +95,7 @@ class LocationManagement extends React.Component {
             }
             return (
               <LocationCard
+                key={site.value}
                 name={site.text}
                 live={site.live}
                 offline={site.offline}

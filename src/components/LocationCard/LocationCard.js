@@ -55,12 +55,12 @@ class LocationCard extends React.Component {
               <Col xs="3" lg="4">
                 <div className="d-flex">
                   <span className={styles.divider} />
-                  <Nav.Link className="py-0">
+                  <div className="pl-3">
                     <Link to={"/menu-management/" + this.props.value} className={styles.link}>
                       <MenuManagement width="30" height="30" fill="#4A4A4A" className="pr-2" />
                       Manage Menu
                     </Link>
-                  </Nav.Link>
+                  </div>
                 </div>
               </Col>
               <Col xs="3">
@@ -87,7 +87,7 @@ class LocationCard extends React.Component {
               <Row>
                 {this.props.thirdParties.map(thirdParty => {
                   return (
-                    <Col xs="6" lg="3">
+                    <Col xs="6" lg="3" key={thirdParty.name}>
                       <div className="d-flex">
                         <p className="pr-2">{thirdParty.name}</p>
                         <ToggleOffline enabled={thirdParty.offline ? false : true} className="pr-3" />

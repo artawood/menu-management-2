@@ -30,7 +30,6 @@ class ItemCard extends React.Component {
           <Card
             className="item-card"
             {...provided.draggableProps}
-            innerRef={provided.innerRef}
             ref={provided.innerRef}
             isDragging={snapshot.isDragging}
             {...provided.dragHandleProps}
