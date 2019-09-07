@@ -1,9 +1,10 @@
 import React from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
-import { Row, Col, Dropdown } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 import ItemCard from "../ItemCard";
-import CustomDropdown from "../CustomDropdown";
+//Uncomment this import below if allowing user to add item, delete category
+// import CategoryDropdown from "../CategoryDropdown";
 
 const Container = styled.div`
   margin: 8px;
@@ -43,16 +44,8 @@ class MenuSection extends React.Component {
                 </Col>
                 <Col sm="3" className="text-right">
                   <div className="px-2">
-                    <Dropdown alignRight>
-                      <Dropdown.Toggle as={CustomDropdown}>
-                        <i className="fas fa-ellipsis-h" />
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item>Add Item</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item>Delete Category</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
+                    {/* Uncomment this below if allowing user to add item/delete category */}
+                    {/* <CategoryDropdown /> */}
                   </div>
                 </Col>
               </Row>

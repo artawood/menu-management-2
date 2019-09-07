@@ -20,6 +20,9 @@ const style = {
   },
   li: {
     fontSize: 24
+  },
+  pointer: {
+    cursor: "pointer"
   }
 };
 
@@ -67,12 +70,12 @@ class SampleModal extends React.Component {
     return (
       <div>
         <li className="nav-item hover" onClick={this.handleShow}>
-          <a className="nav-link ml-4" href="#">
+          <p className="nav-link ml-4" style={style.pointer}>
             <span data-feather="push-changes">
               <Push width="30" height="30" className="pr-2" />
             </span>
             Push Changes
-          </a>
+          </p>
         </li>
 
         <Modal show={this.state.show} onHide={this.handleClose} centered>

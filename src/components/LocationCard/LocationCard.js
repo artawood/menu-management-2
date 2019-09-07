@@ -4,12 +4,16 @@ import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../Togglers/ToggleOffline";
 import { MenuManagement, ChevronDown, Warning } from "../Icons";
 import OfflineDayDropdown from "../OfflineDayDropdown";
+import NotLiveOverlay from "../NotLiveOverlay";
 import styles from "./LocationCard.module.css";
 
 const style = {
   card: {
     fontSize: "16px",
     overflow: "visible"
+  },
+  thirdPartyRow: {
+    paddingLeft: "15px"
   }
 };
 
@@ -32,13 +36,7 @@ class LocationCard extends React.Component {
     return (
       <Accordion {...(this.props.expandAll ? { activeKey: "0" } : {})}>
         <Card className={`mb-2 p-1 ${styles.card}`} style={style.card}>
-          {this.props.live ? (
-            <div className={styles.overlay}>
-              <h2 className={`mt-2 ${styles.overlayText}`}>
-                <Warning height="20" /> &nbsp; Not live with ItsaCheckmate
-              </h2>
-            </div>
-          ) : null}
+          {this.props.live ? <NotLiveOverlay /> : null}
           <Card.Body>
             <Row className="pb-1">
               <Col xs="3" lg="2" className="pr-0">
@@ -84,10 +82,10 @@ class LocationCard extends React.Component {
           <Accordion.Collapse eventKey="0">
             <Card.Body>
               <div className="divider mb-3" />
-              <Row>
+              <Row style={style.thirdPartyRow}>
                 {this.props.thirdParties.map(thirdParty => {
                   return (
-                    <Col xs="6" lg="3" key={thirdParty.name}>
+                    <Col xs="6" lg="4" xl="3" className="px-0" key={thirdParty.name}>
                       <div className="d-flex">
                         <p className="pr-2">{thirdParty.name}</p>
                         <ToggleOffline enabled={thirdParty.offline ? false : true} className="pr-3" />

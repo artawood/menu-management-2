@@ -25,13 +25,12 @@ class ItemCard extends React.Component {
 
   render() {
     return (
-      <Draggable draggableId={this.props.item.id} index={this.props.index}>
+      <Draggable draggableId={this.props.item.id} index={this.props.index} isDragDisabled={false}>
         {(provided, snapshot) => (
           <Card
             className="item-card"
             {...provided.draggableProps}
             ref={provided.innerRef}
-            isDragging={snapshot.isDragging}
             {...provided.dragHandleProps}
           >
             <Card.Body>
@@ -42,7 +41,7 @@ class ItemCard extends React.Component {
                 <Col sm="2">
                   <Dropdown alignRight>
                     <Dropdown.Toggle as={CustomDropdown}>
-                      <i class="fas fa-ellipsis-h" />
+                      <i className="fas fa-ellipsis-h" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item eventKey="1">
@@ -73,7 +72,7 @@ class ItemCard extends React.Component {
                       <div className="d-flex" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
                         <SoldOutDuration soldOutDuration={this.props.item.scheduledFor} />
                         <div className="">
-                          <Edit className="pl-2" width="30" onClick={this.toggleEditSoldOutSchedule} />
+                          <Edit className="pl-2 edit-time" width="30" onClick={this.toggleEditSoldOutSchedule} />
                         </div>
                       </div>
                     ) : (

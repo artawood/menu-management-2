@@ -1,5 +1,6 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
+import "./OfflineDayDropdown.css";
 
 const style = {
   color: "#d52b2b"
