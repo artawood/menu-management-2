@@ -26,7 +26,6 @@ class App extends React.Component {
     return (
       <Router onUpdate={() => window.scrollTo(0, 0)}>
         <ScrollToTop>
-          <Header />
           <Switch>
             <Route exact path="/" component={LocationManagement} />
             <Route exact path="/location-management" component={LocationManagement} />

@@ -2855,6 +2855,21 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ]
+    },
+    {
+      key: "000000",
+      text: "My Awesome Restaurant",
+      value: "000000",
+      offline: false,
+      scheduled: false,
+      scheduledFor: "",
+      thirdParties: [
+        { name: "Grubhub", offline: true, scheduledFor: "5 days" },
+        { name: "Postmates", offline: true, scheduledFor: "4 days" },
+        { name: "Chownow", offline: true, scheduledFor: "4 days" },
+        { name: "UberEats", offline: true, scheduledFor: "1 day" },
+        { name: "Caviar", offline: true, scheduledFor: "2 days" }
+      ]
     }
   ],
   thirdParties: [

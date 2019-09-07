@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
+import Header from "../../components/Header";
 import ToggleExpandAll from "../../components/ToggleExpandAll";
 import LocationCard from "../../components/LocationCard";
 import LocationSearchBar from "../../components/LocationSearchBar";
@@ -50,6 +51,7 @@ class LocationManagement extends React.Component {
   render() {
     return (
       <div className="bg-gray">
+        <Header />
         <Container className="pt-5">
           <h2 className="pt-5">Location Management</h2>
           <Row className="pt-4 pb-2">

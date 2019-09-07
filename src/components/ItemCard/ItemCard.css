@@ -83,3 +83,7 @@
 .see-details:hover {
   color: #6f6d6d;
 }
+
+.edit-time:hover {
+  cursor: pointer;
+}
