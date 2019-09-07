@@ -2735,6 +2735,50 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false },
         { name: "DeliveryLogic", offline: false }
+      ],
+      deliveryHours: [
+        {
+          day: "Sunday",
+          open: { time: "9:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2748,6 +2792,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2762,6 +2850,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2775,6 +2907,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2788,6 +2964,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2802,6 +3022,50 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false },
         { name: "DeliveryLogic", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2815,6 +3079,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2828,6 +3136,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2841,6 +3193,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2854,6 +3250,50 @@ const data = {
         { name: "UberEats", offline: false },
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     },
     {
@@ -2869,6 +3309,50 @@ const data = {
         { name: "Chownow", offline: true, scheduledFor: "4 days" },
         { name: "UberEats", offline: true, scheduledFor: "1 day" },
         { name: "Caviar", offline: true, scheduledFor: "2 days" }
+      ],
+      hours: [
+        {
+          day: "Sunday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Monday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Tuesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Wednesday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Thursday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Friday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        },
+        {
+          day: "Saturday",
+          open: { time: "12:00", meridiem: "AM" },
+          close: { time: "11:00", meridiem: "PM" },
+          closeAllDay: false
+        }
       ]
     }
   ],

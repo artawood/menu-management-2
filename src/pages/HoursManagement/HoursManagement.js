@@ -1,0 +1,44 @@
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Header from "../../components/Header2";
+import Sidebar from "../../components/Sidebar";
+import SidebarContent from "../../components/SidebarContent";
+import Hero from "../../components/Hero";
+import DayCard from "../../components/DayCard";
+
+import data from "../../models/data.js";
+
+class HoursManagement extends React.Component {
+  state = data;
+
+  render() {
+    const id = this.props.match.params.id;
+    return (
+      <div className="App">
+        <Header />
+        <Sidebar sidebar={<SidebarContent id={id} />} docked={true}>
+          <Container className="pl-6">
+            <Hero className="pb-5" title="Hours Management" />
+            <Container>
+              {this.state.location[0].deliveryHours.map(delivery => {
+                return (
+                  <DayCard
+                    key={delivery.day}
+                    day={delivery.day}
+                    openTime={delivery.open.time}
+                    openMeridiem={delivery.open.meridiem}
+                    closeTime={delivery.close.time}
+                    closeMeridiem={delivery.close.meridiem}
+                    closeAllDay={delivery.closeAllDay}
+                  />
+                );
+              })}
+            </Container>
+          </Container>
+        </Sidebar>
+      </div>
+    );
+  }
+}
+
+export default HoursManagement;
