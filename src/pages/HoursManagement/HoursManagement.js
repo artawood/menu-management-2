@@ -17,9 +17,10 @@ class HoursManagement extends React.Component {
       <div className="App">
         <Header />
         <Sidebar sidebar={<SidebarContent id={id} />} docked={true}>
-          <Container className="pl-6">
-            <Hero className="pb-5" title="Hours Management" />
-            <Container>
+          <Container className="pl-5 pt-5">
+            <h2 className="pt-5">Hours Management</h2>
+            <div className="hero-divider py-1" />
+            <Container className="pt-3">
               {this.state.location[0].deliveryHours.map(delivery => {
                 return (
                   <DayCard
