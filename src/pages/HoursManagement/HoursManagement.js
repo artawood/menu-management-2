@@ -1,9 +1,8 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Header from "../../components/Header2";
 import Sidebar from "../../components/Sidebar";
 import SidebarContent from "../../components/SidebarContent";
-import Hero from "../../components/Hero";
 import DayCard from "../../components/DayCard";
 
 import data from "../../models/data.js";
@@ -13,6 +12,7 @@ class HoursManagement extends React.Component {
 
   render() {
     const id = this.props.match.params.id;
+    console.log(id);
     return (
       <div className="App">
         <Header />

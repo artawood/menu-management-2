@@ -45,7 +45,11 @@ class DayCard extends React.Component {
             <Col md="4">
               <label className="close-all-day mt-2">
                 Close All Day
-                <input type="checkbox" onClick={this.handleCloseAllDay.bind(this)}></input>
+                <input
+                  type="checkbox"
+                  checked={this.state.closeAllDay}
+                  onClick={this.handleCloseAllDay.bind(this)}
+                ></input>
                 <span className="checkmark"></span>
               </label>
             </Col>

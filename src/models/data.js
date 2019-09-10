@@ -2725,6 +2725,7 @@ const data = {
   location: [
     {
       key: "AL0193",
+      id: 0,
       text: "Five Guys - AL0193",
       value: "AL0193",
       offline: true,
@@ -2741,7 +2742,7 @@ const data = {
           day: "Sunday",
           open: { time: "9:00", meridiem: "AM" },
           close: { time: "11:00", meridiem: "PM" },
-          closeAllDay: false
+          closeAllDay: true
         },
         {
           day: "Monday",
@@ -2783,6 +2784,7 @@ const data = {
     },
     {
       key: "AL0230",
+      id: 1,
       text: "Five Guys - AL0230",
       value: "AL0230",
       offline: false,
@@ -2840,6 +2842,7 @@ const data = {
     },
     {
       key: "AL0048",
+      id: 2,
       text: "Five Guys - AL0048",
       value: "AL0048",
       scheduled: false,
@@ -2898,6 +2901,7 @@ const data = {
     },
     {
       key: "AL0068",
+      id: 3,
       text: "Five Guys - AL0068",
       value: "AL0068",
       scheduled: false,
@@ -2955,6 +2959,7 @@ const data = {
     },
     {
       key: "AL0434",
+      id: 4,
       text: "Five Guys - AL0434",
       value: "AL0434",
       scheduled: false,
@@ -3012,6 +3017,7 @@ const data = {
     },
     {
       key: "CA0095",
+      id: 5,
       text: "Five Guys - CA0095",
       value: "CA0095",
       offline: false,
@@ -3070,6 +3076,7 @@ const data = {
     },
     {
       key: "CA0235",
+      id: 6,
       text: "Five Guys - CA0235",
       value: "CA0235",
       offline: false,
@@ -3127,6 +3134,7 @@ const data = {
     },
     {
       key: "CA0348",
+      id: 7,
       text: "Five Guys - CA0348",
       value: "CA0348",
       offline: false,
@@ -3184,6 +3192,7 @@ const data = {
     },
     {
       key: "FL0168",
+      id: 8,
       text: "Five Guys - FL0168",
       value: "FL0168",
       offline: false,
@@ -3241,6 +3250,7 @@ const data = {
     },
     {
       key: "NY0026",
+      id: 9,
       text: "Five Guys - NY0026",
       value: "NY0026",
       offline: false,
@@ -3298,6 +3308,7 @@ const data = {
     },
     {
       key: "000000",
+      id: 10,
       text: "My Awesome Restaurant",
       value: "000000",
       offline: false,

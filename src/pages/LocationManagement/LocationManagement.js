@@ -98,6 +98,7 @@ class LocationManagement extends React.Component {
             return (
               <LocationCard
                 key={site.value}
+                id={site.id}
                 name={site.text}
                 live={site.live}
                 offline={site.offline}
