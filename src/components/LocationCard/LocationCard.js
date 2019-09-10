@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Accordion, Nav } from "react-bootstrap";
 import ToggleOffline from "../Togglers/ToggleOffline";
-import { MenuManagement, ChevronDown, Warning } from "../Icons";
+import { MenuManagement, ChevronDown, Clock } from "../Icons";
 import OfflineDayDropdown from "../OfflineDayDropdown";
 import NotLiveOverlay from "../NotLiveOverlay";
 import styles from "./LocationCard.module.css";
@@ -55,8 +55,14 @@ class LocationCard extends React.Component {
                   <span className={styles.divider} />
                   <div className="pl-3">
                     <Link to={"/menu-management/" + this.props.value} className={styles.link}>
-                      <MenuManagement width="30" height="30" fill="#4A4A4A" className="pr-2" />
+                      <MenuManagement width="28" height="28" fill="#4A4A4A" className="pr-2" />
                       Manage Menu
+                    </Link>
+                  </div>
+                  <div className="pl-3">
+                    <Link to={"/hours-management/" + this.props.value} className={styles.link}>
+                      <Clock width="30" height="30" fill="#4A4A4A" className="pr-2" />
+                      Manage hours
                     </Link>
                   </div>
                 </div>
