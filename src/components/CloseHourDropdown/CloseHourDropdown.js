@@ -43,7 +43,7 @@ class CloseHourDropdown extends React.Component {
   render() {
     return (
       <div className="d-flex">
-        <div className="pr-2 mt-2">Open</div>
+        <div className="pr-2 mt-2">Close</div>
         <Dropdown
           options={this.state.duration}
           value={this.state.selectedHour || this.props.closeTime}

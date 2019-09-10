@@ -1,5 +1,6 @@
 export * from "./Add";
 export * from "./ChevronDown";
+export * from "./Clock";
 export * from "./Close";
 export * from "./Cogwheel";
 export * from "./Edit";

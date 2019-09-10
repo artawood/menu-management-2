@@ -20,7 +20,7 @@ class HoursManagement extends React.Component {
           <Container className="pl-5 pt-5">
             <h2 className="pt-5">Hours Management</h2>
             <div className="hero-divider py-1" />
-            <Container className="pt-3">
+            <Container className="pt-5">
               {this.state.location[0].deliveryHours.map(delivery => {
                 return (
                   <DayCard
