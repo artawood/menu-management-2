@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import Header from "../../components/Header";
 import ToggleExpandAll from "../../components/ToggleExpandAll";
@@ -14,7 +14,7 @@ class LocationManagement extends React.Component {
     super(props);
     this.toggleExpandAll = this.toggleExpandAll.bind(this);
     this.state = {
-      location: data.location,
+      locations: data.location,
       filterText: "",
       collapseText: "Expand All",
       expandAll: false,
@@ -53,7 +53,7 @@ class LocationManagement extends React.Component {
       <div className="bg-gray">
         <Header />
         <Container className="pt-5">
-          <h2 className="pt-5">Location Management</h2>
+          <h2 className="pt-5">Location Management 2</h2>
           <Row className="pt-4 pb-2">
             <Col lg="4" className="">
               <LocationSearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
@@ -91,13 +91,14 @@ class LocationManagement extends React.Component {
               <ThirdPartyFilter thirdParties={this.state.thirdParties} />
             </Col>
           </Row>
-          {this.state.location.map(site => {
+          {this.state.locations.map(site => {
             if (site.text.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1) {
               return;
             }
             return (
               <LocationCard
                 key={site.value}
+                id={site.id}
                 name={site.text}
                 live={site.live}
                 offline={site.offline}
@@ -108,20 +109,6 @@ class LocationManagement extends React.Component {
               />
             );
           })}
-          {/* {this.state.location.map(site => {
-            if (site.text.toLowerCase().indexOf(this.state.filterText) === -1) {
-              return;
-            }
-            return (
-              <LocationCard
-                name={site.text}
-                offline={site.offline}
-                thirdParties={site.thirdParties}
-                value={site.value}
-                expand={this.state.expand}
-              />
-            );
-          })} */}
         </Container>
       </div>
     );

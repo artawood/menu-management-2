@@ -99,6 +99,7 @@ class MenuManagement extends React.Component {
 
   render() {
     const id = this.props.match.params.id;
+
     let sectionContent = (
       <div className="row">
         {this.state.menuSectionOrder.map((sectionId, index) => {
