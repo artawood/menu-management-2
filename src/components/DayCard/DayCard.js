@@ -47,7 +47,7 @@ class DayCard extends React.Component {
                 Close All Day
                 <input
                   type="checkbox"
-                  checked={this.state.closeAllDay}
+                  defaultChecked={this.state.closeAllDay}
                   onClick={this.handleCloseAllDay.bind(this)}
                 ></input>
                 <span className="checkmark"></span>

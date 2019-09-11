@@ -89,8 +89,10 @@ class SampleModal extends React.Component {
           <Modal.Body style={style.modalBody}>
             <h4 className="pt-2">Third Party Apps</h4>
             <ul>
-              {this.state.thirdParties.map(thirdParty => (
-                <li style={style.li}>{thirdParty}</li>
+              {this.state.thirdParties.map((thirdParty, index) => (
+                <li key={index} style={style.li}>
+                  {thirdParty}
+                </li>
               ))}
             </ul>
             <h4>POS</h4>
