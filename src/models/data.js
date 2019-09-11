@@ -2795,7 +2795,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -2854,7 +2854,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -2912,7 +2912,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -2970,7 +2970,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3029,7 +3029,7 @@ const data = {
         { name: "Doordash", offline: false },
         { name: "DeliveryLogic", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3087,7 +3087,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3145,7 +3145,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3203,7 +3203,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3261,7 +3261,7 @@ const data = {
         { name: "Postmates", offline: false },
         { name: "Doordash", offline: false }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
@@ -3321,7 +3321,7 @@ const data = {
         { name: "UberEats", offline: true, scheduledFor: "1 day" },
         { name: "Caviar", offline: true, scheduledFor: "2 days" }
       ],
-      hours: [
+      deliveryHours: [
         {
           day: "Sunday",
           open: { time: "12:00", meridiem: "AM" },
