@@ -25,17 +25,17 @@ class DayCard extends React.Component {
       <Card className="day-card mb-2">
         <Card.Body>
           <Row className="px-2 py-3">
-            <Col md="2">
+            <Col md="4" xl="2">
               <h3>{this.props.day}</h3>
             </Col>
-            <Col md="3">
+            <Col md="4" xl="3">
               {this.state.closeAllDay ? (
                 <div>- -</div>
               ) : (
                 <OpenHourDropdown openTime={this.props.openTime} openMeridiem={this.props.openMeridiem} />
               )}
             </Col>
-            <Col md="3">
+            <Col md="4" xl="3">
               {this.state.closeAllDay ? (
                 <div>- -</div>
               ) : (
