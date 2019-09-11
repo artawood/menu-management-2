@@ -18,7 +18,7 @@ const style = {
 };
 
 //var for adjusting responsive with conditional rendering
-const windowInnerWidth = Window.innerWidth;
+const windowInnerWidth = window.innerWidth;
 
 class LocationCard extends React.Component {
   constructor(props) {

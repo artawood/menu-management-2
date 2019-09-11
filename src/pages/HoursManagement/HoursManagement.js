@@ -7,6 +7,10 @@ import DayCard from "../../components/DayCard";
 
 import data from "../../models/data.js";
 
+//var for adjusting responsive with conditional rendering
+const windowInnerWidth = window.innerWidth;
+console.log(windowInnerWidth);
+
 class HoursManagement extends React.Component {
   state = data;
 
@@ -16,7 +20,7 @@ class HoursManagement extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Sidebar sidebar={<SidebarContent id={id} />} docked={true}>
+        <Sidebar sidebar={<SidebarContent id={id} />} docked={windowInnerWidth < 769 ? false : true}>
           <Container className="pl-5 pt-5">
             <h2 className="pt-5">Hours Management</h2>
             <div className="hero-divider py-1" />
