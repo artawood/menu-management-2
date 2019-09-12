@@ -53,17 +53,25 @@ class LocationCard extends React.Component {
               <Col xs="3" lg="4">
                 <div className="d-flex">
                   <span className={styles.divider} />
-                  <div className="pl-3">
-                    <Link to={"/menu-management/" + this.props.value} className={styles.link}>
+                  <div className="pl-3 d-flex">
+                    <div>
                       <MenuManagement width="28" height="28" fill="#4A4A4A" className="pr-2" />
-                      Manage Menu
-                    </Link>
+                    </div>
+                    <div>
+                      <Link to={"/menu-management/" + this.props.value} className={styles.link}>
+                        Manage Menu
+                      </Link>
+                    </div>
                   </div>
-                  <div className="pl-3">
-                    <Link to={"/hours-management/" + this.props.value} className={styles.link}>
+                  <div className="pl-3 d-flex">
+                    <div>
                       <Clock width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      Manage hours
-                    </Link>
+                    </div>
+                    <div>
+                      <Link to={"/hours-management/" + this.props.value} className={styles.link}>
+                        Manage hours
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </Col>
