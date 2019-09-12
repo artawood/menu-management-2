@@ -600,6 +600,9 @@ const data = {
       name: "Bacon Cheeseburger",
       price: "9.99",
       soldOut: false,
+      scheduled: false,
+      scheduledFor: "",
+      modifierSoldOut: true,
       modifier: [
         {
           id: 0,
@@ -609,7 +612,7 @@ const data = {
           groupName: "Prefer no Bun?",
           groupMin: 0,
           groupMax: 1,
-          soldOut: false,
+          soldOut: true,
           scheduled: false,
           scheduledFor: false
         },

@@ -15,6 +15,12 @@ import CustomDropdown from "../CustomDropdown";
 //Custom CSS
 import "./ItemCard.css";
 
+const style = {
+  card: {
+    overflow: "visible"
+  }
+};
+
 class ItemCard extends React.Component {
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -29,6 +35,7 @@ class ItemCard extends React.Component {
         {(provided, snapshot) => (
           <Card
             className="item-card"
+            style={style.card}
             {...provided.draggableProps}
             ref={provided.innerRef}
             {...provided.dragHandleProps}
@@ -78,9 +85,10 @@ class ItemCard extends React.Component {
                     ) : (
                       <OfflineDayDropdown className="mt-2" />
                     )}
-                    {this.props.modifierSoldOut && !this.props.item.soldOut ? (
+                    {this.props.item.modifierSoldOut && !this.props.item.soldOut ? (
                       <OverlayTrigger
-                        placement="right"
+                        placement="top"
+                        trigger="hover"
                         overlay={<Tooltip>At least one or more modifiers in this item is sold out.</Tooltip>}
                       >
                         <div>
