@@ -16,7 +16,8 @@ const style = {
   },
   modalTitle: {
     padding: "0 0 0 100px",
-    fontWeight: 500
+    fontWeight: 700,
+    lineHeight: "40px"
   },
   li: {
     fontSize: 24
