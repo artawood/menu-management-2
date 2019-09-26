@@ -1,0 +1,54 @@
+.card:hover .not-live-overlay {
+  display: none;
+}
+
+.divider {
+  display: inline-block;
+  width: 0;
+  height: 24px;
+  margin-top: 3px;
+  border-left: 1px solid #979797;
+}
+
+.link {
+  color: #04a89b;
+}
+
+.link:hover {
+  color: #04a89b;
+}
+
+.toggle {
+  color: #4a4a4a;
+}
+
+.toggle:hover {
+  opacity: 0.8;
+}
+
+.thirdPartiesOffline {
+  color: red;
+  padding-right: 5px;
+}
+
+.rotateUp {
+  animation: rotateUp 0.4s ease-out forwards;
+}
+
+.rotateDown {
+  animation: rotateDown 0.4s ease-out;
+}
+
+@keyframes rotateUp {
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotateDown {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

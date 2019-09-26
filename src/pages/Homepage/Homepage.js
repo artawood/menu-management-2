@@ -24,10 +24,10 @@ class Homepage extends React.Component {
                 </Link>
               </Col>
               <Col xs="6">
-                <Link to="/menu-management">
+                <Link to="/menu-creation">
                   <div>
                     <MenuManagement width="100" height="100" />
-                    <h1>Menu Management</h1>
+                    <h1>Menu Creation</h1>
                   </div>
                 </Link>
               </Col>

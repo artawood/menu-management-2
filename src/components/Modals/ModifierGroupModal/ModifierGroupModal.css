@@ -1,0 +1,29 @@
+.side-modal {
+  left: auto;
+  top: 62px;
+}
+
+.side-modal > .modal-dialog {
+  margin: 0;
+}
+
+.side-modal > .modal-dialog > .modal-content {
+  border-radius: 0;
+  height: calc(100vh - 62px);
+  border: 1px solid #e2dfdf;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.side-modal {
+  animation: slide-left 600ms ease-out;
+}
+
+@keyframes slide-left {
+  from {
+    right: -350px;
+  }
+  to {
+    right: 0px;
+  }
+}

@@ -17,6 +17,14 @@ p {
   color: #4a4a4a;
 }
 
+a.action {
+  color: #04a89b;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .container {
   padding-left: 0px;
   padding-right: 0px;
@@ -178,4 +186,11 @@ select:not([multiple]) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+/* custom card styling */
+.card {
+  border: 1px solid #e2dfdf;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
