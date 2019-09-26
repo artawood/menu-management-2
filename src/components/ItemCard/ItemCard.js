@@ -92,7 +92,7 @@ class ItemCard extends React.Component {
                         overlay={<Tooltip>At least one or more modifiers in this item is sold out.</Tooltip>}
                       >
                         <div>
-                          <Warning width="30" className="mt-2" />
+                          <Warning width="20" className="mb-2" />
                         </div>
                       </OverlayTrigger>
                     ) : null}
