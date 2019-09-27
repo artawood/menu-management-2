@@ -1,3 +1,8 @@
 .modifier-group-selector.ui.selection.dropdown {
   min-height: 28px;
 }
+
+.close-btn-modal {
+  position: absolute;
+  right: 5px;
+}
