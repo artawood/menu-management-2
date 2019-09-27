@@ -25,16 +25,18 @@ class ModifierGroupModal extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      showClassName: "hide"
     };
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false, showClassName: "hide" });
+    this.props.handleDraggable();
   }
 
   handleShow() {
-    this.setState({ show: true });
+    this.setState({ show: true, showClassName: "show" });
   }
 
   render() {
@@ -45,19 +47,14 @@ class ModifierGroupModal extends React.Component {
           <ChevronRight fill="#4A4A4A" className="ml-2" width="15" />
         </div>
 
-        <Modal
-          show={this.state.show}
-          onHide={this.handleClose}
-          backdrop={false}
-          animation={false}
-          className={`side-modal ${this.state.showClassName}`}
-        >
+        <Modal show={this.state.show} onHide={this.handleClose} className={`side-modal ${this.state.showClassName}`}>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.object.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body style={style.list}>
             <h3>({this.props.object.modifier_groups.length}) Modifier Groups</h3>
             <div className="d-flex mb-3">
+              {/* identified bug */}
               <ModifierGroupSelector
                 data={this.props.data.modifier_groups}
                 placeholder={"Select Modifier"}

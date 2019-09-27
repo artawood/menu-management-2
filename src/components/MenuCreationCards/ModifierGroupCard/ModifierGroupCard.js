@@ -3,7 +3,9 @@ import { Draggable } from "react-beautiful-dnd";
 import { Row, Col, Card } from "react-bootstrap";
 import { Clock, Trash } from "../../Icons";
 import styles from "./MenuCard.module.css";
-import MenuCreationEditMenuNameModal from "../../Modals/MenuCreationEditMenuNameModal";
+import MenuCreationEditModifierGroupModal from "../../Modals/MenuCreationEditModifierGroupModal";
+import MenuCreationDuplicateModal from "../../Modals/MenuCreationDuplicateModal";
+import ConfirmDeleteModal from "../../Modals/ConfirmDeleteModal";
 import ModifierModal from "../../Modals/ModifierModal";
 
 const style = {
@@ -28,10 +30,31 @@ const windowInnerWidth = window.innerWidth;
 class ModifierGroupCard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isDragDisabled: false
+    };
   }
+  //Disable draggable while modal appears
+  disableDraggable = () => {
+    this.setState({
+      isDragDisabled: true
+    });
+  };
+
+  handleDraggable = () => {
+    this.setState({
+      isDragDisabled: false
+    });
+  };
   render() {
     return (
-      <Draggable draggableId={this.props.object.id} index={this.props.index} style={style.cardBody}>
+      <Draggable
+        draggableId={this.props.object.id}
+        index={this.props.index}
+        style={style.cardBody}
+        isDragDisabled={this.state.isDragDisabled}
+      >
         {(provided, snapshot) => (
           <Card {...provided.draggableProps} ref={provided.innerRef} {...provided.dragHandleProps} className="mb-2">
             <Card.Body style={style.cardBody}>
@@ -41,32 +64,34 @@ class ModifierGroupCard extends React.Component {
                     <Card.Title style={style.card}>{this.props.object.name}</Card.Title>
                   </div>
                 </Col>
-                <Col xs="3" lg="3"></Col>
+                <Col xs="3" lg="3">
+                  <Row className="mt-1">
+                    <Col xs="6">
+                      <div>{this.props.object.min}</div>
+                    </Col>
+                    <Col xs="6">
+                      <div>{this.props.object.max}</div>
+                    </Col>
+                  </Row>
+                </Col>
                 <Col xs="3" lg="4">
                   <div className="d-flex">
                     <span className={styles.divider} />
-                    <MenuCreationEditMenuNameModal
-                      modalTitle={"Edit Modifier Group Name"}
-                      name={this.props.object.name}
-                    />
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Clock width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <a style={style.action}>Duplicate</a>
-                    </div>
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Trash width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <a style={style.action}>Delete</a>
-                    </div>
+                    <MenuCreationEditModifierGroupModal modalTitle={"Edit Modifier Group"} object={this.props.object} />
+                    <MenuCreationDuplicateModal modalTitle={"Modifier Group"} name={this.props.object.name} />
+                    <ConfirmDeleteModal itemToDelete={this.props.object.name} />
                   </div>
                 </Col>
                 <Col xs="3">
                   <div className="d-flex">
                     <span className={styles.divider} />
-                    <ModifierModal data={this.props.data} object={this.props.object} />
+                    <div onClick={this.disableDraggable}>
+                      <ModifierModal
+                        handleDraggable={this.handleDraggable}
+                        data={this.props.data}
+                        object={this.props.object}
+                      />
+                    </div>
                   </div>
                 </Col>
               </Row>

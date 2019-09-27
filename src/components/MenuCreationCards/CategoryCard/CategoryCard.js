@@ -1,9 +1,10 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Row, Col, Card } from "react-bootstrap";
-import { ChevronRight, Loading, Clock, Trash } from "../../Icons";
 import styles from "./MenuCard.module.css";
 import MenuCreationEditMenuNameModal from "../../Modals/MenuCreationEditMenuNameModal";
+import MenuCreationDuplicateModal from "../../Modals/MenuCreationDuplicateModal";
+import ConfirmDeleteModal from "../../Modals/ConfirmDeleteModal";
 
 const style = {
   card: {
@@ -45,22 +46,8 @@ class CategoryCard extends React.Component {
                   <div className="d-flex">
                     <span className={styles.divider} />
                     <MenuCreationEditMenuNameModal modalTitle={"Edit Category Name"} name={this.props.object.name} />
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Clock width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <div>
-                        <a style={style.action}>Duplicate</a>
-                      </div>
-                    </div>
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Trash width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <div>
-                        <a style={style.action}>Delete</a>
-                      </div>
-                    </div>
+                    <MenuCreationDuplicateModal modalTitle={"Category"} name={this.props.object.name} />
+                    <ConfirmDeleteModal itemToDelete={this.props.object.name} />
                   </div>
                 </Col>
                 <Col xs="3"></Col>

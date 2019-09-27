@@ -1,16 +1,14 @@
 import React from "react";
 
 //Bootstrap Imports
-import { Button, Modal, InputGroup, FormControl, Nav } from "react-bootstrap";
+import { Row, Col, Button, Modal, InputGroup, FormControl, Nav } from "react-bootstrap";
 import { CloseButton } from "../../Buttons";
+import { EditOutline } from "../../Icons";
 
 const style = {
   itemName: {
     fontStyle: "italic",
     fontWeight: 400
-  },
-  newText: {
-    fontSize: "18px"
   },
   modalBody: {
     paddingLeft: 25,
@@ -30,7 +28,7 @@ const style = {
   }
 };
 
-class MenuCreationEditMenuNameModal extends React.Component {
+class MenuCreationEditModifierGroupModal extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.handleShow = this.handleShow.bind(this);
@@ -40,7 +38,9 @@ class MenuCreationEditMenuNameModal extends React.Component {
 
     this.state = {
       show: false,
-      name: this.props.name,
+      name: this.props.object.name,
+      min: this.props.object.min,
+      max: this.props.object.max,
       price: props.price,
       showSaved: false
     };
@@ -70,21 +70,24 @@ class MenuCreationEditMenuNameModal extends React.Component {
   }
 
   handleInputChange = event => {
-    const { name, value } = event.target;
+    const { name, min, max, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
+      [min]: value,
+      [max]: value
     });
   };
 
   render() {
     return (
-      <div>
-        <div className="d-flex ml-4 mt-1 cursor-pointer" onClick={this.handleShow}>
-          <a>
-            <span style={style.newText}>
-              <i className="fas fa-plus"></i> New
-            </span>
-          </a>
+      <div className="mt-1 cursor-pointer">
+        <div className="pl-3 d-flex" onClick={this.handleShow}>
+          <div>
+            <EditOutline width="15" height="15" />
+          </div>
+          <div className="pl-2">
+            <a style={style.action}>Edit</a>
+          </div>
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose} centered>
@@ -100,11 +103,56 @@ class MenuCreationEditMenuNameModal extends React.Component {
                 value={this.state.name}
                 name="name"
                 onChange={this.handleInputChange}
-                placeholder={this.props.modalTitle}
+                placeholder="edit name"
                 aria-label="name"
                 style={style.formControl}
               />
             </InputGroup>
+            <Row>
+              <Col xs="8">
+                <Row>
+                  <Col xs="6">
+                    <div>Min</div>
+                    <div>
+                      <InputGroup size="lg" className="pb-3">
+                        <FormControl
+                          value={this.state.min}
+                          name="min"
+                          onChange={this.handleInputChange}
+                          placeholder="edit min"
+                          aria-label="min"
+                          style={style.formControl}
+                        />
+                      </InputGroup>
+                    </div>
+                  </Col>
+                  <Col xs="6">
+                    <div>Max</div>
+                    <div>
+                      <InputGroup size="lg" className="pb-3">
+                        <FormControl
+                          value={this.state.max}
+                          name="max"
+                          onChange={this.handleInputChange}
+                          placeholder="edit max"
+                          aria-label="max"
+                          style={style.formControl}
+                        />
+                      </InputGroup>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs="4">
+                <div className="mt-4">
+                  <label className="close-all-day mt-2">
+                    No Max
+                    <input type="checkbox"></input>
+                    <span className="checkmark"></span>
+                  </label>
+                </div>
+              </Col>
+            </Row>
           </Modal.Body>
           <Modal.Footer style={style.modalFooter}>
             <Button variant="primary" onClick={this.showSaved}>
@@ -130,4 +178,4 @@ class MenuCreationEditMenuNameModal extends React.Component {
   }
 }
 
-export default MenuCreationEditMenuNameModal;
+export default MenuCreationEditModifierGroupModal;

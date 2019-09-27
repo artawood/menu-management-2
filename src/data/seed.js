@@ -56,6 +56,8 @@ const data = {
       name: "Proteins",
       text: "Proteins",
       value: "Proteins",
+      min: "1",
+      max: "1",
       modifiers: ["modifier-1", "modifier-2", "modifier-3"]
     },
     "modifier-group-2": {
@@ -63,6 +65,8 @@ const data = {
       name: "Veggies",
       text: "Veggies",
       value: "Veggies",
+      min: "1",
+      max: "-",
       modifiers: ["modifier-4", "modifier-5"]
     },
     "modifier-group-3": {
@@ -70,6 +74,8 @@ const data = {
       name: "Dressings",
       text: "Dressings",
       value: "Dressings",
+      min: "1",
+      max: "3",
       modifiers: ["modifier-6", "modifier-7", "modifier-8"]
     },
     "modifier-group-4": {
@@ -77,6 +83,8 @@ const data = {
       name: "Ice Cream",
       text: "Ice Cream",
       value: "Ice Cream",
+      min: "1",
+      max: "1",
       modifiers: ["modifier-9", "modifier-10"]
     }
   },
