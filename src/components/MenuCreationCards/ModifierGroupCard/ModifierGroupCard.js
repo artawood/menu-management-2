@@ -38,7 +38,7 @@ class ModifierGroupCard extends React.Component {
   //Disable draggable while modal appears
   disableDraggable = () => {
     this.setState({
-      isDragDisabled: true
+      isDragDisabled: !this.state.isDragDisabled
     });
   };
 

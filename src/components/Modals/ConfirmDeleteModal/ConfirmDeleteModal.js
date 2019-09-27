@@ -42,7 +42,7 @@ class CancelSaveModal extends React.Component {
       <div>
         <div className="pl-3 d-flex mt-1 cursor-pointer" onClick={this.handleShow}>
           <div>
-            <TrashOutline width="27" fill="#4A4A4A" className="pr-2" />
+            <TrashOutline fill="#4A4A4A" width="27" fill="#4A4A4A" className="pr-2" />
           </div>
           <div>
             <a style={style.action}>Delete</a>
@@ -53,7 +53,7 @@ class CancelSaveModal extends React.Component {
           <Modal.Header className="text-center" closeButton />
           <Modal.Body>
             <Modal.Title className="text-center px-5">
-              Are you sure you want to delete {this.props.itemToDelete} without saving?
+              Are you sure you want to delete {this.props.itemToDelete}?
             </Modal.Title>
           </Modal.Body>
           <Modal.Footer className="mx-auto">
