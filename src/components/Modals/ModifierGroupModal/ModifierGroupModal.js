@@ -40,7 +40,7 @@ class ModifierGroupModal extends React.Component {
       <div>
         <div className="d-flex pl-4 mt-1" onClick={this.toggleVisibleModal}>
           <a>({this.props.object.modifier_groups.length}) Modifier Groups </a>
-          <ChevronRight fill="#4A4A4A" className="ml-2" width="15" />
+          <ChevronRight fill="#4A4A4A" className="ml-2" width="15" height="15" />
         </div>
 
         <ModalSlider
