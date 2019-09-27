@@ -30,7 +30,7 @@ class App extends React.Component {
       <Router onUpdate={() => window.scrollTo(0, 0)}>
         <ScrollToTop>
           <Switch>
-            <Route exact path="/" component={Homepage} />
+            <Route exact path="/" component={LocationManagement} />
             <Route exact path="/location-management" component={LocationManagement} />
             <Route exact path="/hours-management" component={HoursManagement} />
             <Route exact path="/hours-management/:id" component={HoursManagement} />

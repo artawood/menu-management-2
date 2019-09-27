@@ -32,6 +32,7 @@ class ModifierModal extends React.Component {
 
   handleClose() {
     this.setState({ show: false, showClassName: "hide" });
+    this.props.handleDraggable();
   }
 
   handleShow() {
@@ -46,13 +47,7 @@ class ModifierModal extends React.Component {
           <ChevronRight fill="#4A4A4A" className="ml-2" width="15" />
         </div>
 
-        <Modal
-          show={this.state.show}
-          onHide={this.handleClose}
-          backdrop={false}
-          animation={false}
-          className={`side-modal ${this.state.showClassName}`}
-        >
+        <Modal show={this.state.show} onHide={this.handleClose} className={`side-modal ${this.state.showClassName}`}>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.object.name}</Modal.Title>
           </Modal.Header>

@@ -1,17 +1,14 @@
 import React from "react";
 
 //Bootstrap Imports
-import { Container, Row, Col, Modal, InputGroup, FormControl, Button } from "react-bootstrap";
+import { Button, Modal, InputGroup, FormControl, Nav } from "react-bootstrap";
 import { CloseButton } from "../../Buttons";
-import { Edit } from "../../Icons";
+import { DuplicateOutline } from "../../Icons";
 
 const style = {
   itemName: {
     fontStyle: "italic",
     fontWeight: 400
-  },
-  csvIcon: {
-    fontSize: "18px"
   },
   modalBody: {
     paddingLeft: 25,
@@ -25,10 +22,13 @@ const style = {
     paddingBottom: 30,
     paddingLeft: 25,
     paddingRight: 25
+  },
+  action: {
+    color: "#04a89b"
   }
 };
 
-class CSVImportModal extends React.Component {
+class MenuCreationDuplicateModal extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.handleShow = this.handleShow.bind(this);
@@ -38,7 +38,7 @@ class CSVImportModal extends React.Component {
 
     this.state = {
       show: false,
-      name: props.name,
+      name: this.props.name,
       price: props.price,
       showSaved: false
     };
@@ -76,55 +76,39 @@ class CSVImportModal extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="d-flex ml-4 mt-1 cursor-pointer" onClick={this.handleShow}>
-          <a>
-            <span style={style.csvIcon}>
-              <i className="fas fa-file-csv"></i> Import CSV
-            </span>
-          </a>
+      <div className="mt-1 cursor-pointer">
+        <div className="pl-3 d-flex" onClick={this.handleShow}>
+          <div>
+            <DuplicateOutline width="17" />
+          </div>
+          <div className="pl-2">
+            <a style={style.action}>Duplicate</a>
+          </div>
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose} centered>
           <Modal.Header className="bg-gray">
             <h2 className="pt-3">
-              Import CSV: <span style={style.itemName}>{this.props.modalTitle}</span>
+              Duplicating {this.props.modalTitle}: <span style={style.itemName}>{this.state.name}</span>
             </h2>
             <CloseButton handleClose={this.handleClose} />
           </Modal.Header>
           <Modal.Body className="pt-5" style={style.modalBody}>
-            <Row>
-              <Col xs="3">
-                <Button variant="secondary" size="sm" bsPrefix="sv-btn" onClick={this.showSaved}>
-                  Choose File
-                </Button>
-              </Col>
-              <Col xs="9">
-                <div>
-                  <InputGroup size="lg" className="pb-3">
-                    <FormControl
-                      value={this.state.name}
-                      name="name"
-                      onChange={this.handleInputChange}
-                      placeholder="No file chosen yet"
-                      aria-label="name"
-                      style={style.formControl}
-                    />
-                  </InputGroup>
-                </div>
-                <div>
-                  <label className="close-all-day mt-2">
-                    Replace All
-                    <input type="checkbox"></input>
-                    <span className="checkmark"></span>
-                  </label>
-                </div>
-              </Col>
-            </Row>
+            <h3>Save as:</h3>
+            <InputGroup size="lg" className="pb-3">
+              <FormControl
+                value={`${this.state.name}-2`}
+                name="name"
+                onChange={this.handleInputChange}
+                placeholder="edit name"
+                aria-label="name"
+                style={style.formControl}
+              />
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer style={style.modalFooter}>
             <Button variant="primary" onClick={this.showSaved}>
-              Import
+              Save
             </Button>
           </Modal.Footer>
         </Modal>
@@ -133,7 +117,7 @@ class CSVImportModal extends React.Component {
           <Modal.Header />
           <Modal.Body className="text-center">
             <Modal.Title>Sorry!</Modal.Title>
-            This is just a prototype. File cannot be uploaded at this time.
+            This is just a prototype. Data cannot be edited at this time.
           </Modal.Body>
           <Modal.Footer className="mx-auto">
             <Button variant="secondary" onClick={this.gotIt}>
@@ -146,4 +130,4 @@ class CSVImportModal extends React.Component {
   }
 }
 
-export default CSVImportModal;
+export default MenuCreationDuplicateModal;

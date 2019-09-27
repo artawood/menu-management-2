@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 import MenuSearchBar from "../../MenuSearchBar";
 import ModifierGroupCard from "../../MenuCreationCards/ModifierGroupCard";
-import { NameFilter, ActionFilter, ModifierFilter } from "../../Filters";
+import { NameFilter, ActionFilter, ModifierFilter, GroupMaxFilter, GroupMinFilter } from "../../Filters";
 import MenuCreationCreateNewModal from "../../Modals/MenuCreationCreateNewModal";
 import CSVImportModal from "../../Modals/CSVImportModal/CSVImportModal";
 
@@ -59,7 +59,16 @@ class ModifierGroupsTab extends React.Component {
           <Col xs="3" lg="2">
             <NameFilter text={"Group Name"} />
           </Col>
-          <Col xs="3" lg="3"></Col>
+          <Col xs="3" lg="3">
+            <Row>
+              <Col xs="6">
+                <GroupMinFilter />
+              </Col>
+              <Col xs="6">
+                <GroupMaxFilter />
+              </Col>
+            </Row>
+          </Col>
           <Col xs="3" lg="4">
             <ActionFilter />
           </Col>

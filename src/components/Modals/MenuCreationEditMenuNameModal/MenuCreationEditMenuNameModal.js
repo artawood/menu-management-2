@@ -3,7 +3,7 @@ import React from "react";
 //Bootstrap Imports
 import { Button, Modal, InputGroup, FormControl, Nav } from "react-bootstrap";
 import { CloseButton } from "../../Buttons";
-import { Edit } from "../../Icons";
+import { EditOutline } from "../../Icons";
 
 const style = {
   itemName: {
@@ -76,12 +76,12 @@ class MenuCreationEditMenuNameModal extends React.Component {
 
   render() {
     return (
-      <div className="float-left mt-1">
+      <div className="mt-1 cursor-pointer">
         <div className="pl-3 d-flex" onClick={this.handleShow}>
           <div>
-            <Edit width="32" height="32" />
+            <EditOutline width="15" height="15" />
           </div>
-          <div>
+          <div className="pl-2">
             <a style={style.action}>Edit</a>
           </div>
         </div>

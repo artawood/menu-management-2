@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect, Link } from "react-router-dom";
 //Bootstrap Imports
 import { Modal, Button } from "react-bootstrap";
-import { Trash } from "../../Icons";
+import { TrashOutline } from "../../Icons";
 
 const style = {
   action: {
@@ -40,9 +40,9 @@ class CancelSaveModal extends React.Component {
   render() {
     return (
       <div>
-        <div className="pl-3 d-flex mt-1" onClick={this.handleShow}>
+        <div className="pl-3 d-flex mt-1 cursor-pointer" onClick={this.handleShow}>
           <div>
-            <Trash width="30" height="30" fill="#4A4A4A" className="pr-2" />
+            <TrashOutline width="27" fill="#4A4A4A" className="pr-2" />
           </div>
           <div>
             <a style={style.action}>Delete</a>

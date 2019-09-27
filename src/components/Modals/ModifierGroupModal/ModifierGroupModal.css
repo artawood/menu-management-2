@@ -1,23 +1,29 @@
 .side-modal {
   left: auto;
-  top: 58px;
 }
 
 .side-modal > .modal-dialog {
   margin: 0;
   max-width: 375px;
+  position: absolute;
+  right: 0;
 }
 
 .side-modal > .modal-dialog > .modal-content {
   border-radius: 0;
-  height: calc(100vh - 58px);
+  height: calc(100vh);
   border: 1px solid #e2dfdf;
   background-color: #ffffff;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
-.side-modal {
+.side-modal.show.modal {
   animation: slide-left 600ms ease-out;
+}
+
+.side-modal.hide.modal {
+  animation: slide-right 600ms ease-out;
+  display: block;
 }
 
 @keyframes slide-left {
@@ -26,5 +32,14 @@
   }
   to {
     right: 0px;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -350px;
   }
 }

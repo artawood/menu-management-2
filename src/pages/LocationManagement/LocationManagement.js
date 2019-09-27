@@ -53,7 +53,7 @@ class LocationManagement extends React.Component {
       <div className="bg-gray">
         <Header />
         <Container className="pt-5">
-          <h2 className="pt-5">Location Management 2</h2>
+          <h2 className="pt-5">Location Management</h2>
           <Row className="pt-4 pb-2">
             <Col lg="4" className="">
               <LocationSearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />

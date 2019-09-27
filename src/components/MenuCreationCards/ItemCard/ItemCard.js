@@ -1,9 +1,10 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Row, Col, Card } from "react-bootstrap";
-import { Clock, Trash } from "../../Icons";
 import styles from "./MenuCard.module.css";
 import MenuCreationEditMenuNameModal from "../../Modals/MenuCreationEditMenuNameModal";
+import MenuCreationDuplicateModal from "../../Modals/MenuCreationDuplicateModal";
+import ConfirmDeleteModal from "../../Modals/ConfirmDeleteModal";
 import ModifierGroupModal from "../../Modals/ModifierGroupModal";
 
 const style = {
@@ -28,10 +29,33 @@ const windowInnerWidth = window.innerWidth;
 class ItemCard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isDragDisabled: false
+    };
   }
+
+  //Disable draggable while modal appears
+  disableDraggable = () => {
+    this.setState({
+      isDragDisabled: true
+    });
+  };
+
+  handleDraggable = () => {
+    this.setState({
+      isDragDisabled: false
+    });
+  };
+
   render() {
     return (
-      <Draggable draggableId={this.props.object.id} index={this.props.index} style={style.cardBody}>
+      <Draggable
+        draggableId={this.props.object.id}
+        index={this.props.index}
+        style={style.cardBody}
+        isDragDisabled={this.state.isDragDisabled}
+      >
         {(provided, snapshot) => (
           <Card {...provided.draggableProps} ref={provided.innerRef} {...provided.dragHandleProps} className="mb-2">
             <Card.Body style={style.cardBody}>
@@ -46,28 +70,20 @@ class ItemCard extends React.Component {
                   <div className="d-flex">
                     <span className={styles.divider} />
                     <MenuCreationEditMenuNameModal modalTitle={"Edit Item Name"} name={this.props.object.name} />
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Clock width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <div>
-                        <a style={style.action}>Duplicate</a>
-                      </div>
-                    </div>
-                    <div className="pl-3 d-flex mt-1">
-                      <div>
-                        <Trash width="30" height="30" fill="#4A4A4A" className="pr-2" />
-                      </div>
-                      <div>
-                        <a style={style.action}>Delete</a>
-                      </div>
-                    </div>
+                    <MenuCreationDuplicateModal modalTitle={"Item"} name={this.props.object.name} />
+                    <ConfirmDeleteModal itemToDelete={this.props.object.name} />
                   </div>
                 </Col>
                 <Col xs="3">
                   <div className="d-flex">
                     <span className={styles.divider} />
-                    <ModifierGroupModal data={this.props.data} object={this.props.object} />
+                    <div onClick={this.disableDraggable}>
+                      <ModifierGroupModal
+                        handleDraggable={this.handleDraggable}
+                        data={this.props.data}
+                        object={this.props.object}
+                      />
+                    </div>
                   </div>
                 </Col>
               </Row>
