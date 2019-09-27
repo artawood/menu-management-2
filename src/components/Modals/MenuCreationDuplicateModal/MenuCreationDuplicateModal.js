@@ -79,7 +79,7 @@ class MenuCreationDuplicateModal extends React.Component {
       <div className="mt-1 cursor-pointer">
         <div className="pl-3 d-flex" onClick={this.handleShow}>
           <div>
-            <DuplicateOutline width="17" />
+            <DuplicateOutline fill="#4A4A4A" width="17" />
           </div>
           <div className="pl-2">
             <a style={style.action}>Duplicate</a>

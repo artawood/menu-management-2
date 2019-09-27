@@ -79,7 +79,7 @@ class MenuCreationEditMenuNameModal extends React.Component {
       <div className="mt-1 cursor-pointer">
         <div className="pl-3 d-flex" onClick={this.handleShow}>
           <div>
-            <EditOutline width="15" height="15" />
+            <EditOutline fill="#4A4A4A" width="15" height="15" />
           </div>
           <div className="pl-2">
             <a style={style.action}>Edit</a>
